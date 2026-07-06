@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -146,7 +146,7 @@ h2.display em { font-style: italic; color: var(--red); font-weight: 400; }
   .logo-tagline { display: none; }
   .nav { display: none; }
   .hamburger { display: flex; }
-  .about-page-img { height: 350px; }
+  .about-page-img { height: auto; width: 100%; }
   .values-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 36px; }
 }
@@ -175,7 +175,7 @@ h2.display em { font-style: italic; color: var(--red); font-weight: 400; }
           <span>compliance@czarconsultancy.com</span>
         </a>
       </div>
-      <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
     </div>
   </div>
 
@@ -194,6 +194,18 @@ h2.display em { font-style: italic; color: var(--red); font-weight: 400; }
     </div>
   </nav>
 </header>
+
+<div class="mob-nav" id="mobileNav" aria-hidden="true">
+  <button class="mob-nav-close" type="button" onclick="toggleMobileNav()">Close ×</button>
+  <a href="/" onclick="toggleMobileNav()">Home</a>
+  <a href="/about" onclick="toggleMobileNav()">About Us</a>
+  <a href="/services" onclick="toggleMobileNav()">Services</a>
+  <a href="/insights" onclick="toggleMobileNav()">Insights</a>
+  <a href="/team" onclick="toggleMobileNav()">Our Team</a>
+  <a href="/careers" onclick="toggleMobileNav()">Careers</a>
+  <a href="/contact" onclick="toggleMobileNav()">Contact</a>
+  <a href="/contact" class="nav-cta" onclick="toggleMobileNav()">Enquire Now</a>
+</div>
 
 <div class="breadcrumb"><div class="wrap"><a href="/">Home</a><span>/</span><span>About Us</span></div></div>
 
@@ -284,6 +296,17 @@ function initReveal() {
   document.querySelectorAll('.rv:not(.in)').forEach(el => io.observe(el));
 }
 window.addEventListener('DOMContentLoaded', initReveal);
+</script>
+<script>
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  const button = document.getElementById('mobileMenuButton');
+  if (!nav) return;
+  const isOpen = nav.classList.toggle('open');
+  nav.setAttribute('aria-hidden', String(!isOpen));
+  if (button) button.setAttribute('aria-expanded', String(isOpen));
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
 </script>
 </body>
 </html>

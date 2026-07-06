@@ -1,45 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://czarconsultancy.com/index.html</loc>
-    <lastmod>2024-07-02</lastmod>
+    <loc>https://www.czarconsultancy.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://czarconsultancy.com/about.html</loc>
-    <lastmod>2024-07-02</lastmod>
+    <loc>https://www.czarconsultancy.com/about</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://czarconsultancy.com/services.html</loc>
-    <lastmod>2024-07-02</lastmod>
+    <loc>https://www.czarconsultancy.com/services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://czarconsultancy.com/team.html</loc>
-    <lastmod>2024-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://czarconsultancy.com/contact.html</loc>
-    <lastmod>2024-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://czarconsultancy.com/careers.html</loc>
-    <lastmod>2024-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://czarconsultancy.com/insights.html</loc>
-    <lastmod>2024-07-02</lastmod>
+    <loc>https://www.czarconsultancy.com/insights</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.czarconsultancy.com/team</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.czarconsultancy.com/careers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.czarconsultancy.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Service detail pages -->
+  <url><loc>https://www.czarconsultancy.com/services-registration</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-pfesic</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-labour</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-payroll</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-shop</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-contract</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-epf</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-posh</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-factory</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-bocw</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-fire</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services-recruitment</loc></url>
+
+  <!-- Office pages -->
+  <url><loc>https://www.czarconsultancy.com/gurugram</loc></url>
+  <url><loc>https://www.czarconsultancy.com/new-delhi</loc></url>
 </urlset>

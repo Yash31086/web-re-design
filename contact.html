@@ -12,7 +12,8 @@
 <style>
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111827; line-height: 1.6; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111827; line-height: 1.6;   overflow-x: hidden;
+}
 img { display: block; max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
 :root { --red: #C62828; --red-dk: #8E0000; --ink: #111827; --gray: #4B5563; --line: #E5E7EB; --bg-soft: #F9FAFB; --ff-serif: 'EB Garamond', Georgia, serif; --max: 1280px; --radius: 12px; }
@@ -73,7 +74,8 @@ a { text-decoration: none; color: inherit; }
 .f-col ul li a:hover { color: #fff; }
 
 @media(max-width: 1080px) { .wrap { padding: 0 32px; } .contact-page-grid { grid-template-columns: 1fr; gap: 48px; } .footer-top { grid-template-columns: 1fr 1fr; gap: 48px; } }
-@media(max-width: 720px) { .wrap { padding: 0 18px; } .nav { display: none; } }
+@media(max-width: 720px) {
+  .hamburger { display: flex; } .wrap { padding: 0 18px; } .nav { display: none; } }
 </style>
 </head>
 <body>
@@ -84,7 +86,12 @@ a { text-decoration: none; color: inherit; }
   <div class="header-top">
     <div class="wrap nav-wrap">
       <a class="nav-logo" href="/"><img src="src/assets/logo.png" alt="Czar" class="logo-img"/></a>
-    </div>
+        <button class="hamburger" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+  </div>
   </div>
   <nav class="nav">
     <div class="wrap nav-wrap">
@@ -101,6 +108,18 @@ a { text-decoration: none; color: inherit; }
     </div>
   </nav>
 </header>
+
+<div class="mob-nav" id="mobileNav" aria-hidden="true">
+  <button class="mob-nav-close" type="button" onclick="toggleMobileNav()">Close ×</button>
+  <a href="/" onclick="toggleMobileNav()">Home</a>
+  <a href="/about" onclick="toggleMobileNav()">About Us</a>
+  <a href="/services" onclick="toggleMobileNav()">Services</a>
+  <a href="/insights" onclick="toggleMobileNav()">Insights</a>
+  <a href="/team" onclick="toggleMobileNav()">Our Team</a>
+  <a href="/careers" onclick="toggleMobileNav()">Careers</a>
+  <a href="/contact" onclick="toggleMobileNav()">Contact</a>
+  <a href="/contact" class="nav-cta" onclick="toggleMobileNav()">Enquire Now</a>
+</div>
 
 <div class="breadcrumb"><div class="wrap"><a href="/">Home</a><span>/</span><span>Contact</span></div></div>
 
@@ -207,6 +226,17 @@ async function handleContactForm() {
 
 const progressBar = document.getElementById('scrollProgress');
 window.addEventListener('scroll', ()=>{ const h = document.documentElement; progressBar.style.width = ((h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100) + '%'; });
+</script>
+<script>
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  const button = document.getElementById('mobileMenuButton');
+  if (!nav) return;
+  const isOpen = nav.classList.toggle('open');
+  nav.setAttribute('aria-hidden', String(!isOpen));
+  if (button) button.setAttribute('aria-expanded', String(isOpen));
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
 </script>
 </body>
 </html>

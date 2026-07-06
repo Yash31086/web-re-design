@@ -12,7 +12,8 @@
 <style>
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111827; line-height: 1.6; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111827; line-height: 1.6;   overflow-x: hidden;
+}
 img { display: block; max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; cursor: pointer; }
 ul { list-style: none; }
@@ -103,6 +104,7 @@ h2.display em { font-style: italic; color: var(--red); font-weight: 400; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 48px; }
 }
 @media(max-width: 720px) {
+  .hamburger { display: flex; }
   .wrap { padding: 0 18px; }
   .logo-tagline { display: none; }
   .nav { display: none; }
@@ -151,6 +153,18 @@ h2.display em { font-style: italic; color: var(--red); font-weight: 400; }
   </nav>
 </header>
 
+<div class="mob-nav" id="mobileNav" aria-hidden="true">
+  <button class="mob-nav-close" type="button" onclick="toggleMobileNav()">Close ×</button>
+  <a href="/" onclick="toggleMobileNav()">Home</a>
+  <a href="/about" onclick="toggleMobileNav()">About Us</a>
+  <a href="/services" onclick="toggleMobileNav()">Services</a>
+  <a href="/insights" onclick="toggleMobileNav()">Insights</a>
+  <a href="/team" onclick="toggleMobileNav()">Our Team</a>
+  <a href="/careers" onclick="toggleMobileNav()">Careers</a>
+  <a href="/contact" onclick="toggleMobileNav()">Contact</a>
+  <a href="/contact" class="nav-cta" onclick="toggleMobileNav()">Enquire Now</a>
+</div>
+
 <div class="breadcrumb"><div class="wrap"><a href="/">Home</a><span>/</span><span>Services</span></div></div>
 
 <div class="page-hero">
@@ -172,66 +186,66 @@ h2.display em { font-style: italic; color: var(--red); font-weight: 400; }
     </div>
 
     <div class="svc-grid">
-      <div class="svc-card">
+      <a class="svc-card" href="/contact?service=Registration%20%26%20Allied%20Services">
         <span class="svc-card-num">01</span>
         <h3>Registration & Allied Services</h3>
         <p>EPF, ESIC and Shop & Establishment registrations plus sub-code for branches.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=PF%20%26%20ESIC%20Compliance">
         <span class="svc-card-num">02</span>
         <h3>PF & ESIC Compliance</h3>
         <p>Social security compliance under PF Act 1952 and ESIC Act 1948.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=Labour%20Law%20Consultant">
         <span class="svc-card-num">03</span>
         <h3>Labour Law Consultant</h3>
         <p>Trusted advisory on all statutory labour law obligations and industrial disputes.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=Payroll%20Processing">
         <span class="svc-card-num">04</span>
         <h3>Payroll Processing</h3>
         <p>Complete payroll management — computation, deductions, payslips and compliance.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=Shop%20%26%20Establishment">
         <span class="svc-card-num">05</span>
         <h3>Shop & Establishment</h3>
         <p>Shop and Commercial Establishment Act registration, renewals and compliance.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=Contract%20Labour%20Act%201970">
         <span class="svc-card-num">06</span>
         <h3>Contract Labour Act 1970</h3>
         <p>Licensing, record-keeping and welfare obligations under CL (R&A) Act, 1970.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=EPF%20%26%20MP%20Act%201952">
         <span class="svc-card-num">07</span>
         <h3>EPF & MP Act 1952</h3>
         <p>Online PF registration, challan submission, returns and all EPF administration.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=POSH%20Act%202013">
         <span class="svc-card-num">08</span>
         <h3>POSH Act 2013</h3>
         <p>Prevention of Sexual Harassment — policy, IC constitution and training.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=Factory%20Act%20Consultants">
         <span class="svc-card-num">09</span>
         <h3>Factory Act Consultants</h3>
         <p>Complete Factories Act compliance — licences, renewals, safety and returns.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=BOCW%20Act%20Registration">
         <span class="svc-card-num">10</span>
         <h3>BOCW Act Registration</h3>
         <p>Building and Other Construction Workers Act registration and compliance.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=Fire%20NOC%20Approval">
         <span class="svc-card-num">11</span>
         <h3>Fire NOC Approval</h3>
         <p>Fire fighting scheme design and Fire NOC approvals from authorities.</p>
-      </div>
-      <div class="svc-card">
+      </a>
+      <a class="svc-card" href="/contact?service=Recruitment%20Services">
         <span class="svc-card-num">12</span>
         <h3>Recruitment Services</h3>
         <p>Legal recruitment compliance and talent placement across India.</p>
-      </div>
+      </a>
     </div>
 
     <div style="margin-top:64px;padding:48px;background:var(--bg-soft);border-radius:var(--radius);text-align:center;">
@@ -263,6 +277,17 @@ window.addEventListener('scroll', ()=>{
   const h = document.documentElement;
   progressBar.style.width = ((h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100) + '%';
 });
+</script>
+<script>
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  const button = document.getElementById('mobileMenuButton');
+  if (!nav) return;
+  const isOpen = nav.classList.toggle('open');
+  nav.setAttribute('aria-hidden', String(!isOpen));
+  if (button) button.setAttribute('aria-expanded', String(isOpen));
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
 </script>
 </body>
 </html>
