@@ -11,37 +11,31 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const ACCESS_KEY = process.env.WEB3FORMS_ACCESS_KEY;
-
-if (!ACCESS_KEY) {
-  console.warn('WEB3FORMS_ACCESS_KEY is not set. Form submission will fail.');
-}
+const ACCESS_KEY = process.env.WEB3FORMS_ACCESS_KEY || '67f3d90b-c48c-4c8f-bef3-fd00b18e92fd';
 
 app.use(express.json());
+app.use(express.static(path.resolve(__dirname, '..', 'public')));
 app.use(express.static(path.resolve(__dirname, '..')));
 
 // Clean URL routing - serve .html files without extension
 app.use((req, res, next) => {
   const filePath = path.resolve(__dirname, '..', req.path.slice(1) + '.html');
-  
+
   // Skip if it's an API route or has a file extension
   if (req.path.startsWith('/api/') || req.path.includes('.')) {
     return next();
   }
-  
+
   // Try to serve the .html file
   if (fs.existsSync(filePath)) {
-    res.sendFile(filePath);
-  } else {
-    next();
+    return res.sendFile(filePath);
   }
+
+  // Fallback for client-side routes like /services/registration
+  return res.sendFile(path.resolve(__dirname, '..', 'index.html'));
 });
 
 app.post('/api/web3forms', async (req, res) => {
-  if (!ACCESS_KEY) {
-    return res.status(500).json({ success: false, error: 'Server form key not configured.' });
-  }
-
   const payload = {
     access_key: ACCESS_KEY,
     ...req.body

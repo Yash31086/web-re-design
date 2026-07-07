@@ -22,7 +22,7 @@
       "@type": "Organization",
       "name": "Czar Consultancy",
       "url": "https://www.czarconsultancy.com/",
-      "logo": "https://www.czarconsultancy.com/src/assets/logo.png",
+      "logo": "https://www.czarconsultancy.com/logo.png",
       "sameAs": ["https://www.linkedin.com/company/czar-consultancy"]
     },
     {
@@ -51,7 +51,7 @@
 /* ─── RESET & BASE ─── */
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111827; overflow-x: hidden; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111827; overflow-x: hidden; line-height: 1.6; -webkit-font-smoothing: antialiased; -webkit-overflow-scrolling: touch; overscroll-behavior-x: none; }
 img { display: block; max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; cursor: pointer; }
 ul { list-style: none; }
@@ -601,6 +601,15 @@ h2.display em::after { content: ''; position: absolute; bottom: 4px; left: 0; wi
   .related-grid { grid-template-columns: repeat(2, 1fr); }
   .svc-sidebar { position: static; }
 }
+@media (hover: none) and (pointer: coarse) {
+  .rv { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .svc-card, .related-card, .insight-card, .person-card-text { transform: none !important; box-shadow: none !important; }
+  .svc-card:hover, .svc-card.touch-active, .related-card:hover, .insight-card:hover { transform: none !important; }
+  .svc-card:hover .svc-card-bg, .svc-card.touch-active .svc-card-bg { opacity: 1; transform: none; filter: none; }
+  .svc-card:hover .svc-card-overlay, .svc-card.touch-active .svc-card-overlay { opacity: 1; }
+  .svc-card:hover .svc-card-content, .svc-card.touch-active .svc-card-content { transform: none; }
+}
+
 @media(max-width: 720px) {
   .wrap { padding: 0 20px; }
   .header-top { padding: 8px 0; border-bottom: none; }
@@ -674,10 +683,10 @@ h2.display em::after { content: ''; position: absolute; bottom: 4px; left: 0; wi
         <li><a href="#home" id="nav-home" class="active">Home</a></li>
         <li><a href="#about" id="nav-about">About Us</a></li>
         <li class="has-drop">
-          <a href="#services" id="nav-services">Services</a>
+          <a href="/services" id="nav-services">Services</a>
           <div class="dropdown" id="svcDropdown"></div>
         </li>
-        <li><a href="#insights" id="nav-insights">Insights</a></li>
+        <li><a href="/insights" id="nav-insights">Insights</a></li>
         <li><a href="#team" id="nav-team">Our Team</a></li>
         <li><a href="#careers" id="nav-careers">Careers</a></li>
         <li><a href="#contact" id="nav-contact">Contact</a></li>
@@ -693,7 +702,7 @@ h2.display em::after { content: ''; position: absolute; bottom: 4px; left: 0; wi
   <div class="mob-nav-label">Services</div>
   <div id="mobSvcLinks"></div>
   <div class="mob-nav-label">Company</div>
-  <a href="#insights" onclick="closeMob()">Insights & Updates</a>
+  <a href="/insights" onclick="closeMob()">Insights & Updates</a>
   <a href="#team" onclick="closeMob()">Our Team</a>
   <a href="#careers" onclick="closeMob()">Careers</a>
   <a href="#contact" onclick="closeMob()">Contact Us</a>
@@ -719,7 +728,7 @@ h2.display em::after { content: ''; position: absolute; bottom: 4px; left: 0; wi
         
         <div class="hero-actions">
           <a href="#contact" class="btn btn-red">Request a Consultation <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l8 8-8 8-1.4-1.4L12.2 9H0V7h12.2L6.6 1.4z"/></svg></a>
-          <a href="#services-registration" class="btn btn-outline-white">Explore Services</a>
+          <a href="/services" class="btn btn-outline-white">Explore Services</a>
         </div>
         
         <div class="hero-proof">
@@ -897,7 +906,7 @@ h2.display em::after { content: ''; position: absolute; bottom: 4px; left: 0; wi
           <div class="eyebrow">Insights & Updates</div>
           <h2 class="display">Latest in <em>Compliance & Law</em></h2>
         </div>
-        <a href="#insights" class="btn btn-outline">View All Insights →</a>
+        <a href="/insights" class="btn btn-outline">View All Insights →</a>
       </div>
       <div class="insight-grid" id="homeInsightsGrid">
         </div>
@@ -1292,19 +1301,19 @@ const col1 = services.filter(s => s.category === 'Core Compliance');
 const col2 = services.filter(s => s.category === 'Advisory & Disputes');
 
 svcDropdown.innerHTML = `
-  <div class="mega-col"><h4>Core Compliance</h4><ul>${col1.map(s=>`<li><a href="#services-${s.id}">${s.title}</a></li>`).join('')}</ul></div>
-  <div class="mega-col"><h4>Advisory & Disputes</h4><ul>${col2.map(s=>`<li><a href="#services-${s.id}">${s.title}</a></li>`).join('')}</ul></div>
+  <div class="mega-col"><h4>Core Compliance</h4><ul>${col1.map(s=>`<li><a href="/services/${s.id}">${s.title}</a></li>`).join('')}</ul></div>
+  <div class="mega-col"><h4>Advisory & Disputes</h4><ul>${col2.map(s=>`<li><a href="/services/${s.id}">${s.title}</a></li>`).join('')}</ul></div>
 `;
 
 const mobLinks = document.getElementById('mobSvcLinks');
 services.forEach(s => {
-  const a = document.createElement('a'); a.textContent = s.title; a.href = '#services-' + s.id; a.onclick = () => closeMob(); mobLinks.appendChild(a);
+  const a = document.createElement('a'); a.textContent = s.title; a.href = '/services/' + s.id; a.onclick = (e) => { e.preventDefault(); closeMob(); go('/services/' + s.id); }; mobLinks.appendChild(a);
 });
 
 const homeGrid = document.getElementById('homeSvcGrid');
 services.forEach(s => {
   homeGrid.innerHTML += `
-    <div class="svc-card rv" onclick="window.location.hash='#services-${s.id}'">
+    <div class="svc-card rv" onclick="go('/services/${s.id}')">
       <img src="${s.image}" class="svc-card-bg" alt="${s.title}"/>
       <div class="svc-card-overlay"></div>
       <div class="svc-card-content">
@@ -1353,8 +1362,8 @@ insightsData.forEach((ins, idx) => {
 
 const fl1 = document.getElementById('footerSvcList1');
 const fl2 = document.getElementById('footerSvcList2');
-services.slice(0,6).forEach(s => { fl1.innerHTML += `<li><a href="#services-${s.id}" class="hover-link" style="color:rgba(255,255,255,0.7);font-weight:400;">${s.title}</a></li>`; });
-services.slice(6).forEach(s => { fl2.innerHTML += `<li><a href="#services-${s.id}" class="hover-link" style="color:rgba(255,255,255,0.7);font-weight:400;">${s.title}</a></li>`; });
+services.slice(0,6).forEach(s => { fl1.innerHTML += `<li><a href="/services/${s.id}" class="hover-link" style="color:rgba(255,255,255,0.7);font-weight:400;">${s.title}</a></li>`; });
+services.slice(6).forEach(s => { fl2.innerHTML += `<li><a href="/services/${s.id}" class="hover-link" style="color:rgba(255,255,255,0.7);font-weight:400;">${s.title}</a></li>`; });
 
 const svcContainer = document.getElementById('svc-pages-container');
 services.forEach((s) => {
@@ -1437,7 +1446,7 @@ services.forEach((s) => {
         <h2 class="display">Explore <em>Other Services</em></h2>
         <div class="related-grid">
           ${related.map(r=>`
-          <div class="related-card" onclick="window.location.hash='#services-${r.id}'">
+          <div class="related-card" onclick="go('/services/${r.id}')">
             <span>${r.num}</span>
             <h4>${r.title}</h4>
             <p>${r.short}</p>
@@ -1559,8 +1568,14 @@ function handleRouteChange() {
 
 window.addEventListener('hashchange', handleRouteChange);
 window.addEventListener('popstate', handleRouteChange);
+handleRouteChange();
 
 function initReveal() {
+  if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+    document.querySelectorAll('.rv, .metric, .display').forEach(el => el.classList.add('in'));
+    return;
+  }
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:0.1});
@@ -1596,6 +1611,7 @@ window.addEventListener('scroll', ()=>{
 // WEB3FORMS INTEGRATION (LIVE DATA)
 // ══════════════════════════════════════
 const WEB3FORMS_ACCESS_KEY = '67f3d90b-c48c-4c8f-bef3-fd00b18e92fd';
+const FORM_ENDPOINT = '/api/web3forms';
 
 async function submitNewsletter(btn) {
   const emailInput = document.getElementById('nl-email');
@@ -1611,7 +1627,7 @@ async function submitNewsletter(btn) {
   btn.disabled = true;
 
   try {
-    const response = await fetch('https://api.web3forms.com/submit', {
+    const response = await fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1678,7 +1694,7 @@ async function handleSubmit(btn, prefix) {
   };
 
   try {
-    const response = await fetch('https://api.web3forms.com/submit', {
+    const response = await fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

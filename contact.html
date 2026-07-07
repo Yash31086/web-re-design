@@ -85,7 +85,7 @@ a { text-decoration: none; color: inherit; }
 <header class="header-fixed">
   <div class="header-top">
     <div class="wrap nav-wrap">
-      <a class="nav-logo" href="/"><img src="src/assets/logo.png" alt="Czar" class="logo-img"/></a>
+      <a class="nav-logo" href="/"><img src="/logo.png" alt="Czar" class="logo-img"/></a>
         <button class="hamburger" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
         <span></span>
         <span></span>
@@ -175,7 +175,7 @@ a { text-decoration: none; color: inherit; }
 
 <footer class="footer">
   <div class="wrap footer-top">
-    <div><img src="src/assets/logo.png" alt="Czar" style="height:40px;margin-bottom:16px;"/><p style="line-height:1.8;max-width:320px;">Specialized labour law and compliance services.</p></div>
+    <div><img src="/logo.png" alt="Czar" style="height:40px;margin-bottom:16px;"/><p style="line-height:1.8;max-width:320px;">Specialized labour law and compliance services.</p></div>
     <div class="f-col"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/team">Team</a></li><li><a href="/careers">Careers</a></li></ul></div>
     <div class="f-col"><h4>Quick Links</h4><ul><li><a href="/services">Services</a></li><li><a href="/insights">Insights</a></li><li><a href="/contact">Contact</a></li></ul></div>
     <div class="f-col"><h4>Contact</h4><ul><li><a href="tel:+91 9319095290">+91 9319095290</a></li><li><a href="mailto:compliance@czarconsultancy.com">compliance@czarconsultancy.com</a></li></ul></div>
@@ -187,6 +187,7 @@ a { text-decoration: none; color: inherit; }
 
 <script>
 const WEB3FORMS_ACCESS_KEY = '67f3d90b-c48c-4c8f-bef3-fd00b18e92fd';
+const FORM_ENDPOINT = '/api/web3forms';
 
 async function handleContactForm() {
   const name = document.getElementById('c-name').value.trim();
@@ -202,7 +203,7 @@ async function handleContactForm() {
   btn.disabled = true;
 
   try {
-    const response = await fetch('https://api.web3forms.com/submit', {
+    const response = await fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
