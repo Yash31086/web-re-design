@@ -9,12 +9,12 @@ Disallow: /admin/
 Disallow: /private/
 
 # Allow all public pages
-Allow: /index.html
-Allow: /about.html
-Allow: /services.html
-Allow: /team.html
-Allow: /contact.html
-Allow: /careers.html
-Allow: /insights.html
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /team
+Allow: /contact
+Allow: /careers
+Allow: /insights
 Allow: /src/
 Allow: /assets/
