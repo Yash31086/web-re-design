@@ -19,12 +19,18 @@
       content="Czar Consultancy — India's leading labour law, compliance and payroll advisory firm."
       id="ogDescription"
     />
-    <meta property="og:url" content="https://czarconsultancy.com/" id="ogUrl" />
+    <meta
+      property="og:url"
+      content="https://www.czarconsultancy.com/"
+      id="ogUrl"
+    />
     <link
       rel="canonical"
-      href="https://czarconsultancy.com/"
+      href="https://www.czarconsultancy.com/"
       id="canonicalLink"
     />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
     <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
     <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
     <link rel="shortcut icon" href="/favicon-16x16.png" />
@@ -37,59 +43,59 @@
           {
             "@type": "Organization",
             "name": "Czar Consultancy",
-            "url": "https://czarconsultancy.com/",
-            "logo": "https://czarconsultancy.com/logo.png",
+            "url": "https://www.czarconsultancy.com/",
+            "logo": "https://www.czarconsultancy.com/logo.png",
             "sameAs": ["https://www.linkedin.com/company/czar-consultancy"]
           },
           {
             "@type": "SiteNavigationElement",
             "name": "Main Navigation",
-            "url": "https://czarconsultancy.com/",
+            "url": "https://www.czarconsultancy.com/",
             "about": [
               {
                 "@type": "WebPage",
                 "name": "Home",
-                "url": "https://czarconsultancy.com/"
+                "url": "https://www.czarconsultancy.com/"
               },
               {
                 "@type": "WebPage",
                 "name": "About",
-                "url": "https://czarconsultancy.com/about"
+                "url": "https://www.czarconsultancy.com/about"
               },
               {
                 "@type": "WebPage",
                 "name": "Services",
-                "url": "https://czarconsultancy.com/services"
+                "url": "https://www.czarconsultancy.com/services"
               },
               {
                 "@type": "WebPage",
                 "name": "Insights",
-                "url": "https://czarconsultancy.com/insights"
+                "url": "https://www.czarconsultancy.com/insights"
               },
               {
                 "@type": "WebPage",
                 "name": "Team",
-                "url": "https://czarconsultancy.com/team"
+                "url": "https://www.czarconsultancy.com/team"
               },
               {
                 "@type": "WebPage",
                 "name": "Careers",
-                "url": "https://czarconsultancy.com/careers"
+                "url": "https://www.czarconsultancy.com/careers"
               },
               {
                 "@type": "WebPage",
                 "name": "Contact",
-                "url": "https://czarconsultancy.com/contact"
+                "url": "https://www.czarconsultancy.com/contact"
               },
               {
                 "@type": "WebPage",
                 "name": "Gurugram Office",
-                "url": "https://czarconsultancy.com/gurugram"
+                "url": "https://www.czarconsultancy.com/gurugram"
               },
               {
                 "@type": "WebPage",
                 "name": "New Delhi Office",
-                "url": "https://czarconsultancy.com/new-delhi"
+                "url": "https://www.czarconsultancy.com/new-delhi"
               }
             ]
           }
@@ -917,7 +923,7 @@
            object-fit: cover;
         -o-object-position: center 30%;
            object-position: center 30%;
-        opacity: 0;
+        opacity: 0.7;
         transition:
           opacity 1.5s ease-in-out,
           transform 8s ease-out;
@@ -3270,6 +3276,21 @@
   <body>
     <div class="scroll-progress" id="scrollProgress"></div>
 
+    <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;padding:16px 24px;z-index:10000;box-shadow:0 -4px 20px rgba(0,0,0,0.15);">
+      <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+          <p style="margin:0;font-size:14px;line-height:1.5;">
+            We use cookies to improve your experience. By continuing to visit this site you agree to our use of cookies.
+            <a href="/privacy" style="color:#ff6b6b;text-decoration:underline;">Learn more</a>
+          </p>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <button onclick="acceptCookies()" style="padding:10px 20px;background:#ff6b6b;color:#fff;border:none;border-radius:4px;cursor:pointer;font-weight:600;font-size:14px;transition:background 0.3s;">Accept</button>
+          <button onclick="declineCookies()" style="padding:10px 20px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:4px;cursor:pointer;font-size:14px;transition:background 0.3s;">Decline</button>
+        </div>
+      </div>
+    </div>
+
     <header class="header-fixed" id="mainHeader">
       <div class="header-top">
         <div class="wrap nav-wrap">
@@ -3412,12 +3433,12 @@
           <div class="about-imgs rv">
             <img
               class="about-img-main"
-              src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=700&h=750&fit=crop"
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&h=750&fit=crop"
               alt="Czar office"
             />
             <img
               class="about-img-accent"
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=450&h=380&fit=crop&crop=face"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=450&h=380&fit=crop&crop=face"
               alt="Senior consultant"
             />
             <div class="about-red-block"></div>
@@ -3427,13 +3448,15 @@
             <h2 class="display" id="homeAboutTitle">
               Your Dedicated <em>Compliance Partner</em> Across India
             </h2>
-            <p class="about-preview-excerpt">Loading about preview…</p>
+            <p class="about-preview-excerpt">Czar Consultancy is specialized in providing professional services for industries, manufacturing concerns, factories, commercial establishments, banks, estates, hotels, software companies and other organizations in different areas. We are specialized in providing all Labour Laws and other related services and handling the industrial disputes for management side.</p>
             <div
               class="about-cred"
               id="homeAboutCreds"
               style="display: flex; gap: 24px; margin-top: 18px"
             >
-              <!-- populated from /about -->
+              <div class="cred-item"><strong>15+</strong><span>Years Experience</span></div>
+              <div class="cred-item"><strong>200+</strong><span>Clients Served</span></div>
+              <div class="cred-item"><strong>100%</strong><span>Compliance Focus</span></div>
             </div>
             <div style="margin-top: 40px">
               <a href="/about" class="btn btn-red">Learn More About Us →</a>
@@ -3530,7 +3553,9 @@
           </div>
 
           <div class="people-grid" id="homeTeamPreview">
-            <!-- populated from /team (first 3 profiles) -->
+            <div class="person-card-text rv"><div class="pc-watermark">DS</div><div class="pc-content"><p>Head of Compliance</p><h4>Adv. Dishant Saini</h4><div class="pc-arrow"></div></div></div>
+            <div class="person-card-text rv d1"><div class="pc-watermark">BS</div><div class="pc-content"><p>Senior Labour Law Specialist</p><h4>Adv. B.M. Saini</h4><div class="pc-arrow"></div></div></div>
+            <div class="person-card-text rv d2"><div class="pc-watermark">KS</div><div class="pc-content"><p>Payroll & Taxation Specialist</p><h4>KP Sharma</h4><div class="pc-arrow"></div></div></div>
           </div>
         </div>
       </section>
@@ -3564,7 +3589,7 @@
       <section class="global-sec">
         <img
           class="global-bg"
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&h=700&fit=crop"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=700&fit=crop"
           alt="Modern office"
         />
         <div class="global-overlay"></div>
@@ -3957,7 +3982,9 @@
 
       <section style="padding: 96px 0; background: #fff">
         <div class="wrap">
-          <div class="insight-grid" id="fullInsightsGrid"></div>
+          <div class="insight-grid" id="fullInsightsGrid">
+            <p style="text-align:center;grid-column:1/-1;padding:40px;color:#666;">Loading insights...</p>
+          </div>
         </div>
       </section>
     </div>
@@ -4578,7 +4605,7 @@
         BS: {
           name: "Adv. B.M. Saini",
           role: "Senior Labour Law Specialist",
-          img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+          img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
         },
         DS: {
           name: "Adv. Dishant Saini",
@@ -4588,7 +4615,7 @@
         KS: {
           name: "KP Sharma",
           role: "Payroll & Taxation Specialist",
-          img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+          img: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face",
         },
       };
 
@@ -4691,7 +4718,7 @@
             "Compliance audit across all statutes",
           ],
           image:
-            "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1600",
+            "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=1600",
         },
         {
           id: "payroll",
@@ -5387,6 +5414,11 @@
 
       const homeInsights = document.getElementById("homeInsightsGrid");
       const fullInsights = document.getElementById("fullInsightsGrid");
+      
+      // Clear loading text
+      if (homeInsights) homeInsights.innerHTML = "";
+      if (fullInsights) fullInsights.innerHTML = "";
+      
       function createInsightCard(ins, idx) {
         const delay = idx === 0 ? "" : `d${idx}`;
         const slug =
@@ -5426,17 +5458,24 @@
           const pageHtml = `
       <div class="page" id="${pageId}">
         <div class="breadcrumb"><div class="wrap"><a href="/">Home</a><span>/</span><a href="/insights">Insights</a><span>/</span><span>${ins.title}</span></div></div>
-        <div class="page-hero" style="background-image: url('${ins.img}')">
+        <div class="page-hero" style="background-image: url('${ins.img}'); background-color: #1a1a1a; height: 300px;">
           <div class="page-hero-overlay"></div>
-          <div class="wrap page-hero-inner">
+          <div class="wrap page-hero-inner" style="position: relative; z-index: 2; height: 100%; display: flex; align-items: center;">
             <div>
               <div class="eyebrow" style="color:#ff6b6b">${ins.tag}</div>
-              <h1>${ins.title}</h1>
-              <p>${ins.time}</p>
+              <h1 style="color: #fff; margin: 0;">${ins.title}</h1>
+              <p style="color: rgba(255,255,255,0.8); margin: 8px 0 0 0;">${ins.time}</p>
             </div>
           </div>
         </div>
-        <section style="padding:64px 0; background:#fff;"><div class="wrap"><article><p style="margin-bottom:24px">${ins.desc}</p>${ins.articleHtml ? ins.articleHtml : `<p>Full article content coming soon. For now this page links back to the main Insights hub.</p>`}</article></div></section>
+        <section style="padding: 48px 0; background: #fff;">
+          <div class="wrap">
+            <article style="max-width: 900px; margin: 0 auto;">
+              <p style="margin-bottom: 24px; font-size: 18px; line-height: 1.8; color: #333;">${ins.desc}</p>
+              ${ins.articleHtml ? ins.articleHtml : `<p>Full article content coming soon. For now this page links back to the main Insights hub.</p>`}
+            </article>
+          </div>
+        </section>
       </div>`;
           document.body.insertAdjacentHTML("beforeend", pageHtml);
         }
@@ -5730,7 +5769,7 @@
         if (!document.querySelector('meta[name="description"]'))
           document.head.appendChild(desc);
         const canonical = document.getElementById("canonicalLink");
-        const SITE_ORIGIN = "https://czarconsultancy.com";
+        const SITE_ORIGIN = "https://www.czarconsultancy.com";
         if (canonical)
           canonical.href =
             SITE_ORIGIN.replace(/\/$/, "") +
@@ -5853,10 +5892,64 @@
       );
 
       // ══════════════════════════════════════
+      // COOKIE CONSENT
+      // ══════════════════════════════════════
+      function initCookieConsent() {
+        const banner = document.getElementById('cookie-banner');
+        const cookieChoice = localStorage.getItem('cookieConsent');
+        
+        if (!cookieChoice) {
+          banner.style.display = 'block';
+        }
+      }
+
+      function acceptCookies() {
+        const banner = document.getElementById('cookie-banner');
+        const email = prompt('Enter your email to receive updates (optional):');
+        
+        localStorage.setItem('cookieConsent', 'accepted');
+        if (email && email.includes('@')) {
+          localStorage.setItem('userEmail', email);
+          // Send email notification via Web3Forms
+          sendCookieEmail(email, 'accepted');
+        }
+        
+        banner.style.display = 'none';
+      }
+
+      function declineCookies() {
+        const banner = document.getElementById('cookie-banner');
+        localStorage.setItem('cookieConsent', 'declined');
+        banner.style.display = 'none';
+      }
+
+      async function sendCookieEmail(email, action) {
+        try {
+          await fetch(FORM_ENDPOINT, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              access_key: WEB3FORMS_ACCESS_KEY,
+              subject: `Cookie Consent - ${action}`,
+              email: email,
+              message: `User has ${action} cookies on Czar Consultancy website.`,
+            }),
+          });
+        } catch (error) {
+          console.error('Failed to send cookie email:', error);
+        }
+      }
+
+      initCookieConsent();
+
+      // ══════════════════════════════════════
       // WEB3FORMS INTEGRATION (LIVE DATA)
       // ══════════════════════════════════════
       const WEB3FORMS_ACCESS_KEY = "67f3d90b-c48c-4c8f-bef3-fd00b18e92fd";
-      const FORM_ENDPOINT = "/api/web3forms";
+      const FORM_ENDPOINT = "https://api.web3forms.com/submit";
 
       async function submitNewsletter(btn) {
         const emailInput = document.getElementById("nl-email");
@@ -5887,14 +5980,17 @@
             }),
           });
 
-          if (response.status === 200) {
+          const data = await response.json();
+          
+          if (response.ok && data.success) {
             btn.textContent = "✓ Subscribed!";
             emailInput.value = "";
           } else {
+            console.error("Web3Forms error:", data);
             btn.textContent = "Error. Try Again.";
           }
         } catch (error) {
-          console.error(error);
+          console.error("Form submission error:", error);
           btn.textContent = "Error. Try Again.";
         }
 
@@ -5949,7 +6045,9 @@
             body: JSON.stringify(formData),
           });
 
-          if (response.status === 200) {
+          const data = await response.json();
+          
+          if (response.ok && data.success) {
             btn.textContent = "✓ Request Sent!";
             btn.style.background = "#166534";
 
@@ -5961,10 +6059,13 @@
             if (orgInput) orgInput.value = "";
             if (messageInput) messageInput.value = "";
           } else {
+            console.error("Web3Forms error:", data);
+            alert(`Form submission failed: ${data.message || 'Unknown error'}. Status: ${response.status}`);
             btn.textContent = "Error. Try Again.";
           }
         } catch (error) {
-          console.error(error);
+          console.error("Form submission error:", error);
+          alert(`Network error: ${error.message}`);
           btn.textContent = "Error. Try Again.";
         }
 
