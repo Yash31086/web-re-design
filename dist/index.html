@@ -555,37 +555,16 @@
         display: none;
         flex-direction: column;
         gap: 5px;
-        padding: 10px;
+        padding: 6px;
         z-index: 1001;
-        width: 44px;
-        height: 44px;
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-      .hamburger:hover {
-        background: var(--bg-soft);
-        transform: scale(1.05);
       }
       .hamburger span {
-        width: 20px;
+        width: 26px;
         height: 2px;
         background: var(--ink);
         display: block;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s ease;
         border-radius: 2px;
-      }
-      .hamburger span:nth-child(2) {
-        width: 14px;
-        align-self: flex-end;
-      }
-      .hamburger:hover span:nth-child(2) {
-        width: 20px;
       }
 
       /* ─── SHARED COMPONENTS ─── */
@@ -920,44 +899,20 @@
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         min-height: 100vh;
         overflow: hidden;
-        background: #0b0f19; /* Deep SaaS dark */
+        background: var(--ink);
         padding-top: 150px;
         padding-bottom: 60px;
       }
-      .hero-mesh-bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        overflow: hidden;
-        opacity: 0.8;
-      }
-      .mesh-orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(100px);
-        opacity: 0.4;
-        animation: orbFloat 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .orb-1 { width: 50vw; height: 50vw; background: #c62828; top: -10%; left: -10%; }
-      .orb-2 { width: 40vw; height: 40vw; background: #4b1111; bottom: -20%; right: -10%; animation-delay: -5s; }
-      .orb-3 { width: 30vw; height: 30vw; background: #1f2937; top: 40%; left: 30%; animation-delay: -10s; }
-      
-      @keyframes orbFloat {
-        0% { transform: translate(0, 0) scale(1); }
-        50% { transform: translate(10vw, 5vh) scale(1.1); }
-        100% { transform: translate(-5vw, 15vh) scale(0.9); }
-      }
-
       .hero-bg-slider {
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
-        z-index: 1;
-        mix-blend-mode: overlay;
+        z-index: 0;
+        background: var(--ink);
       }
       .hero-bg-img {
         position: absolute;
@@ -968,105 +923,27 @@
            object-fit: cover;
         -o-object-position: center 30%;
            object-position: center 30%;
-        opacity: 0.4;
+        opacity: 0.7;
         transition:
           opacity 1.5s ease-in-out,
           transform 8s ease-out;
         transform: scale(1);
       }
       .hero-bg-img.active {
-        opacity: 0.4;
+        opacity: 0.7;
         transform: scale(1.05);
-        z-index: 2;
+        z-index: 1;
       }
       .hero-img-overlay {
         position: absolute;
         inset: 0;
         background: linear-gradient(
           90deg,
-          rgba(11, 15, 25, 0.95) 0%,
-          rgba(11, 15, 25, 0.7) 40%,
-          rgba(11, 15, 25, 0.2) 100%
+          rgba(17, 24, 39, 0.95) 0%,
+          rgba(17, 24, 39, 0.6) 50%,
+          transparent 100%
         );
-        z-index: 3;
-      }
-      .hero-grid {
-        position: relative;
-        z-index: 4;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-        width: 100%;
-      }
-      .hero-visuals {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        position: relative;
-        perspective: 1000px;
-      }
-      .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 16px;
-        padding: 20px 24px;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-        width: -moz-fit-content;
-        width: fit-content;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-      }
-      .glass-card:hover {
-        border-color: rgba(198, 40, 40, 0.5);
-        transform: translateY(-5px) scale(1.02) !important;
-      }
-      .glass-card:nth-child(1) { align-self: flex-start; margin-left: 10%; }
-      .glass-card:nth-child(2) { align-self: center; margin-left: 30%; }
-      .glass-card:nth-child(3) { align-self: flex-end; margin-right: 10%; }
-      
-      .float-anim-1 { animation: float 6s ease-in-out infinite; }
-      .float-anim-2 { animation: float 7s ease-in-out infinite 1s; }
-      .float-anim-3 { animation: float 8s ease-in-out infinite 2s; }
-      
-      @keyframes float {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(-15px); }
-        100% { transform: translateY(0); }
-      }
-      
-      .glass-icon {
-        font-size: 28px;
-        background: rgba(198, 40, 40, 0.2);
-        width: 56px;
-        height: 56px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: 1px solid rgba(198, 40, 40, 0.3);
-      }
-      .glass-text {
-        display: flex;
-        flex-direction: column;
-      }
-      .glass-val {
-        font-family: var(--ff-serif);
-        font-size: 28px;
-        font-weight: 700;
-        color: #fff;
-        line-height: 1.1;
-      }
-      .glass-lbl {
-        font-size: 13px;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.6);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
+        z-index: 2;
       }
 
       .hero-content {
@@ -1472,24 +1349,26 @@
       .svc-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        gap: 1px;
+        background: var(--line);
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        overflow: hidden;
+        box-shadow: var(--shadow);
       }
 
-      /* Premium SaaS Service Card */
+      /* Service Card (Tactile glass hover) */
       .svc-card {
         background: #fff;
-        padding: 40px 32px;
+        padding: 0;
         position: relative;
         overflow: hidden;
         cursor: pointer;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all var(--ease);
         height: 100%;
         min-height: 320px;
         display: flex;
         flex-direction: column;
-        border-radius: 16px;
-        border: 1px solid var(--line);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       }
       .svc-card-bg {
         position: absolute;
@@ -1499,14 +1378,20 @@
         -o-object-fit: cover;
            object-fit: cover;
         opacity: 0;
-        transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transition:
+          opacity 0.5s ease,
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 0;
         transform: scale(1);
       }
       .svc-card-overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 0%, rgba(11, 15, 25, 0.3) 100%);
+        background: linear-gradient(
+          to top,
+          rgba(17, 24, 39, 0.95) 0%,
+          rgba(17, 24, 39, 0.2) 100%
+        );
         opacity: 0;
         transition: opacity 0.4s ease;
         z-index: 1;
@@ -1514,52 +1399,51 @@
       .svc-card-content {
         position: relative;
         z-index: 2;
-        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
+        padding: 40px 36px;
+        transition:
+          transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+          color 0.4s ease;
         height: 100%;
         display: flex;
         flex-direction: column;
       }
-      .svc-card::before {
+      .svc-card::after {
         content: "";
         position: absolute;
-        inset: 0;
-        border-radius: 16px;
-        padding: 2px;
-        background: linear-gradient(135deg, var(--red) 0%, transparent 100%);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        opacity: 0;
-        transition: opacity 0.4s ease;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--red);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
         z-index: 3;
       }
 
-      .svc-card:hover,
-      .svc-card.in {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(198, 40, 40, 0.15);
-        border-color: transparent;
-      }
-      .svc-card:hover::before,
-      .svc-card.in::before {
-        opacity: 1;
+      .svc-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        border-radius: 8px;
       }
       .svc-card:hover .svc-card-bg,
-      .svc-card.touch-active .svc-card-bg,
-      .svc-card.in .svc-card-bg {
+      .svc-card.touch-active .svc-card-bg {
         opacity: 1;
-        transform: scale(1.05);
+        transform: scale(1.08);
         filter: blur(2px);
       }
       .svc-card:hover .svc-card-overlay,
-      .svc-card.touch-active .svc-card-overlay,
-      .svc-card.in .svc-card-overlay {
+      .svc-card.touch-active .svc-card-overlay {
         opacity: 1;
       }
+      .svc-card:hover::after,
+      .svc-card.touch-active::after {
+        transform: scaleX(1);
+      }
       .svc-card:hover .svc-card-content,
-      .svc-card.touch-active .svc-card-content,
-      .svc-card.in .svc-card-content {
-        transform: translateY(-4px);
+      .svc-card.touch-active .svc-card-content {
+        transform: translateY(-8px);
       }
 
       .svc-card-num {
@@ -1574,7 +1458,7 @@
       }
       .svc-card h3 {
         font-family: var(--ff-serif);
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 600;
         color: var(--ink);
         margin-bottom: 12px;
@@ -1582,7 +1466,7 @@
         transition: color 0.4s ease;
       }
       .svc-card p {
-        font-size: 14.5px;
+        font-size: 14px;
         color: var(--gray);
         line-height: 1.7;
         transition: color 0.4s ease;
@@ -1603,94 +1487,23 @@
       .svc-card-footer span {
         transition: transform 0.3s ease;
       }
-      .svc-card:hover .svc-card-footer span,
-      .svc-card.in .svc-card-footer span {
-        transform: translateX(8px);
+      .svc-card:hover .svc-card-footer span {
+        transform: translateX(6px);
       }
 
       .svc-card:hover .svc-card-num,
       .svc-card.touch-active .svc-card-num,
-      .svc-card.in .svc-card-num,
       .svc-card:hover h3,
-      .svc-card.touch-active h3,
-      .svc-card.in h3 {
+      .svc-card.touch-active h3 {
         color: #fff;
       }
       .svc-card:hover p,
-      .svc-card.touch-active p,
-      .svc-card.in p {
-        color: rgba(255, 255, 255, 0.85);
+      .svc-card.touch-active p {
+        color: rgba(255, 255, 255, 0.8);
       }
       .svc-card:hover .svc-card-footer,
-      .svc-card.touch-active .svc-card-footer,
-      .svc-card.in .svc-card-footer {
+      .svc-card.touch-active .svc-card-footer {
         color: #ff6b6b;
-      }
-
-      /* ─── COMPLIANCE JOURNEY ─── */
-      .journey-sec {
-        background: var(--ink);
-        color: #fff;
-        padding: 120px 0;
-        position: relative;
-        overflow: hidden;
-      }
-      .journey-sec::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: radial-gradient(circle at 50% 0%, rgba(198,40,40,0.15), transparent 70%);
-      }
-      .journey-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-        position: relative;
-        z-index: 2;
-        margin-top: 64px;
-      }
-      .j-step {
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 16px;
-        padding: 40px 32px;
-        position: relative;
-        transition: all 0.4s ease;
-      }
-      .j-step:hover {
-        background: rgba(255,255,255,0.08);
-        transform: translateY(-8px);
-        border-color: rgba(198,40,40,0.5);
-      }
-      .j-num {
-        font-family: var(--ff-serif);
-        font-size: 64px;
-        font-weight: 700;
-        color: rgba(255,255,255,0.05);
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        line-height: 1;
-        transition: color 0.4s ease;
-      }
-      .j-step:hover .j-num {
-        color: rgba(198,40,40,0.2);
-      }
-      .j-icon {
-        font-size: 32px;
-        margin-bottom: 24px;
-      }
-      .j-title {
-        font-family: var(--ff-serif);
-        font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 16px;
-        color: #fff;
-      }
-      .j-desc {
-        font-size: 14.5px;
-        color: rgba(255,255,255,0.6);
-        line-height: 1.6;
       }
 
       /* ─── TEAM SECTION ─── */
@@ -1863,118 +1676,42 @@
         background: transparent;
         border: none;
       }
-      .client-logo img {
+.client-logo img {
         max-width: 100%;
         max-height: 100%;
         -o-object-fit: contain;
            object-fit: contain;
-        filter: grayscale(100%) opacity(0.5) !important;
-        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        filter: none !important;
+        opacity: 1 !important;
+        transition: all 0.5s ease;
       }
       .client-logo:hover {
         transform: translateY(-2px);
       }
       .client-logo:hover img {
-        filter: grayscale(0%) opacity(1) !important;
+        filter: grayscale(0%) opacity(1);
         transform: scale(1.08);
       }
 
       @keyframes clientScroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
       }
-      
-      .carousel-fade {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 150px;
-        z-index: 10;
-        pointer-events: none;
+.carousel-fade {
+        display: none !important;
       }
-      .carousel-fade-left {
-        left: 0;
-        background: linear-gradient(to right, var(--bg-soft), transparent) !important;
-      }
+      .carousel-fade-left,
       .carousel-fade-right {
-        right: 0;
-        background: linear-gradient(to left, var(--bg-soft), transparent) !important;
+        background: none !important;
       }
 
       .clients-track {
-        display: flex;
-        width: -moz-max-content;
-        width: max-content;
-        gap: 40px;
-        animation: clientScroll 40s linear infinite;
-      }
-
-      /* Premium Testimonials */
-      .testimonial-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
-        margin-top: 80px;
-      }
-      .testimonial-card {
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 40px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        position: relative;
-      }
-      .testimonial-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-      }
-      .t-quote-mark {
-        font-family: var(--ff-serif);
-        font-size: 80px;
-        line-height: 0;
-        color: rgba(198, 40, 40, 0.1);
-        position: absolute;
-        top: 60px;
-        left: 24px;
-      }
-      .testimonial-text {
-        font-family: var(--ff-serif);
-        font-size: 20px;
-        font-style: italic;
-        color: var(--ink);
-        line-height: 1.6;
-        margin-bottom: 32px;
-        position: relative;
-        z-index: 2;
-      }
-      .testimonial-author {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-      .t-avatar {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        background: var(--bg-soft);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--red);
-        border: 1px solid var(--line);
-      }
-      .t-info h4 {
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--ink);
-        margin-bottom: 4px;
-      }
-      .t-info p {
-        font-size: 13px;
-        color: var(--gray);
+        mask: none !important;
+        -webkit-mask: none !important;
       }
 
       /* ─── GLOBAL SEC ─── */
@@ -3349,7 +3086,6 @@
           min-height: auto;
           padding-bottom: 80px;
         }
-        .hero-grid,
         .about-grid,
         .cta-grid,
         .global-grid,
@@ -3363,14 +3099,11 @@
         .about-imgs {
           height: 400px;
           max-width: 600px;
-          width: 100%;
           margin: 0 auto;
         }
         .svc-grid,
         .impact-grid,
-        .insight-grid,
-        .journey-grid,
-        .testimonial-grid {
+        .insight-grid {
           grid-template-columns: repeat(2, 1fr);
         }
         .people-grid {
@@ -3440,18 +3173,13 @@
           gap: 12px;
         }
         .logo-img {
-          height: 60px;
+          height: 40px;
         }
         .logo-name {
-          display: none;
+          font-size: 22px;
         }
         .logo-tagline {
-          display: block;
-          font-size: 9px;
-          max-width: 140px;
-          white-space: normal;
-          line-height: 1.4;
-          padding-left: 12px;
+          display: none;
         }
         .nav {
           display: none;
@@ -3482,9 +3210,7 @@
         .related-grid,
         .values-grid,
         .impact-grid,
-        .insight-grid,
-        .journey-grid,
-        .testimonial-grid {
+        .insight-grid {
           grid-template-columns: 1fr;
         }
         .f-row {
@@ -3636,19 +3362,15 @@
 
     <div class="page active" id="page-home">
       <section class="hero">
-        <div class="hero-mesh-bg">
-          <div class="mesh-orb orb-1"></div>
-          <div class="mesh-orb orb-2"></div>
-          <div class="mesh-orb orb-3"></div>
-        </div>
-        <div class="hero-bg-slider" id="hero-slider">
+<div class="hero-bg-slider" id="hero-slider">
           <img class="hero-bg-img" src="/hero2.png" alt="Czar Background" />
           <img class="hero-bg-img" src="/hero3.png" alt="Czar Background" />
         </div>
+
         <div class="hero-img-overlay"></div>
         <canvas class="ai-canvas" id="heroCanvas"></canvas>
 
-        <div class="wrap hero-grid">
+        <div class="wrap" style="width: 100%">
           <div class="hero-content rv">
             <div class="hero-eyebrow">India's Premier Compliance Firm</div>
             <h1>Where <em>Expertise</em><br />Meets <em>Precision.</em></h1>
@@ -3681,30 +3403,6 @@
               </div>
             </div>
           </div>
-
-          <div class="hero-visuals rv d2">
-            <div class="glass-card float-anim-1">
-              <div class="glass-icon">🛡️</div>
-              <div class="glass-text">
-                <span class="glass-val">100%</span>
-                <span class="glass-lbl">Audit Pass Rate</span>
-              </div>
-            </div>
-            <div class="glass-card float-anim-2">
-              <div class="glass-icon">📜</div>
-              <div class="glass-text">
-                <span class="glass-val">50+</span>
-                <span class="glass-lbl">Labour Acts Covered</span>
-              </div>
-            </div>
-            <div class="glass-card float-anim-3">
-              <div class="glass-icon">⚡</div>
-              <div class="glass-text">
-                <span class="glass-val">Zero</span>
-                <span class="glass-lbl">Compliance Lapses</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -3730,50 +3428,15 @@
         </div>
       </div>
 
-      <section class="journey-sec">
-        <div class="wrap">
-          <div class="eyebrow" style="color: #ff6b6b">The Compliance Journey</div>
-          <h2 class="display" style="color: #fff">How We Secure <em>Your Operations</em></h2>
-          <div class="journey-grid rv">
-            <div class="j-step">
-              <div class="j-num">01</div>
-              <div class="j-icon">🔍</div>
-              <div class="j-title">Comprehensive Audit</div>
-              <div class="j-desc">We begin with a deep dive into your current compliance posture, identifying gaps across all state and central labour laws.</div>
-            </div>
-            <div class="j-step rv d1">
-              <div class="j-num">02</div>
-              <div class="j-icon">📋</div>
-              <div class="j-title">Strategic Remediation</div>
-              <div class="j-desc">Our experts develop a prioritized action plan, addressing critical risks immediately while building long-term compliance frameworks.</div>
-            </div>
-            <div class="j-step rv d2">
-              <div class="j-num">03</div>
-              <div class="j-icon">⚙️</div>
-              <div class="j-title">Process Implementation</div>
-              <div class="j-desc">We integrate robust payroll, HR, and safety protocols directly into your daily operations for seamless adherence.</div>
-            </div>
-            <div class="j-step rv d3">
-              <div class="j-num">04</div>
-              <div class="j-icon">🛡️</div>
-              <div class="j-title">Ongoing Advisory</div>
-              <div class="j-desc">Continuous monitoring and proactive updates ensure you remain immune to regulatory changes and inspection notices.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="about-sec">
         <div class="wrap about-grid">
           <div class="about-imgs rv">
             <img
-              loading="lazy"
               class="about-img-main"
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&h=750&fit=crop"
               alt="Czar office"
             />
             <img
-              loading="lazy"
               class="about-img-accent"
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=450&h=380&fit=crop&crop=face"
               alt="Senior consultant"
@@ -3904,43 +3567,27 @@
             <h2 class="display">200+ <em>Organizations</em> Rely on Czar</h2>
           </div>
           <div class="clients-carousel-wrap">
-            <div class="clients-track" id="clientsCarousel" aria-label="Client logos carousel">
+            <div
+              class="clients-track"
+              id="clientsCarousel"
+              aria-label="Client logos carousel"
+            >
               <!-- populated from clientLogos -->
             </div>
-            <div class="carousel-fade carousel-fade-left" aria-hidden="true"></div>
-            <div class="carousel-fade carousel-fade-right" aria-hidden="true"></div>
-          </div>
-
-          <div class="testimonial-grid rv">
-            <div class="testimonial-card">
-              <span class="t-quote-mark">“</span>
-              <p class="testimonial-text">Czar Consultancy has transformed our compliance posture. Their meticulous approach to the Factories Act and Labour Laws ensures we operate without regulatory friction. A truly world-class partner.</p>
-              <div class="testimonial-author">
-                <div class="t-avatar">M</div>
-                <div class="t-info">
-                  <h4>Managing Director</h4>
-                  <p>Leading Manufacturing Firm</p>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-card rv d2">
-              <span class="t-quote-mark">“</span>
-              <p class="testimonial-text">Their payroll processing and ESIC compliance expertise saved us hundreds of hours and prevented costly lapses. The team's depth of knowledge is unmatched in India.</p>
-              <div class="testimonial-author">
-                <div class="t-avatar">H</div>
-                <div class="t-info">
-                  <h4>HR Head</h4>
-                  <p>Global IT Enterprise</p>
-                </div>
-              </div>
-            </div>
+            <div
+              class="carousel-fade carousel-fade-left"
+              aria-hidden="true"
+            ></div>
+            <div
+              class="carousel-fade carousel-fade-right"
+              aria-hidden="true"
+            ></div>
           </div>
         </div>
       </section>
 
       <section class="global-sec">
         <img
-          loading="lazy"
           class="global-bg"
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=700&fit=crop"
           alt="Modern office"
@@ -4200,7 +3847,6 @@
         <div class="wrap about-page-grid">
           <div class="rv">
             <img
-              loading="lazy"
               class="about-page-img"
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=500&fit=crop"
               alt="Czar Consultancy team meeting"
@@ -4872,7 +4518,6 @@
         <div class="f-brand">
           <div class="footer-logo-card">
             <img
-              loading="lazy"
               src="/logo.png"
               alt="Czar Consultancy"
               class="logo-img"
@@ -5743,7 +5388,7 @@
       services.forEach((s) => {
         homeGrid.innerHTML += `
     <div class="svc-card rv" onclick="go('/services/${s.id}')">
-      <img loading="lazy" src="${s.image}" class="svc-card-bg" alt="${s.title}"/>
+      <img src="${s.image}" class="svc-card-bg" alt="${s.title}"/>
       <div class="svc-card-overlay"></div>
       <div class="svc-card-content">
         <span class="svc-card-num">${s.num}</span>
@@ -5785,7 +5430,7 @@
         const url = "/insights/" + slug;
         return `
     <div class="insight-card rv ${delay}" onclick="go('${url}')" role="link" tabindex="0">
-      <div class="insight-img-wrap"><img loading="lazy" src="${ins.img}" class="insight-img" alt="${ins.title}"/></div>
+      <div class="insight-img-wrap"><img src="${ins.img}" class="insight-img" alt="${ins.title}"/></div>
       <div class="insight-body">
         <div class="insight-meta"><span class="tag">${ins.tag}</span><span>${ins.time}</span></div>
         <h4>${ins.title}</h4>
@@ -5912,7 +5557,7 @@
           expertHTML = `
       <div class="expert-sidebar-card">
         <div class="expert-sidebar-header">
-          <img loading="lazy" src="${expert.img}" alt="${expert.name}" class="expert-sidebar-img"/>
+          <img src="${expert.img}" alt="${expert.name}" class="expert-sidebar-img"/>
           <h4>${expert.name}</h4>
           <p>${expert.role}</p>
         </div>
@@ -5959,7 +5604,7 @@
     <section class="svc-detail">
       <div class="wrap svc-detail-grid">
         <div class="svc-detail-content">
-          <img loading="lazy" src="${s.image}" alt="${s.title}" style="width:100%;height:380px;object-fit:cover;margin-bottom:48px;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"/>
+          <img src="${s.image}" alt="${s.title}" style="width:100%;height:380px;object-fit:cover;margin-bottom:48px;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"/>
           <h3>Overview</h3>
           <p>${s.intro}</p>
           <p>${s.about}</p>
@@ -6519,17 +6164,9 @@
         }
         window.addEventListener("resize", resize);
         resize();
-        let isVisible = false;
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((e) => {
-            isVisible = e.isIntersecting;
-          });
-        }, { threshold: 0 });
-        observer.observe(canvas);
-
         function animate() {
           requestAnimationFrame(animate);
-          if (document.hidden || !isVisible) return;
+          if (document.hidden) return;
           const pos = geo.attributes.position.array;
           for (let i = 0; i < count; i++) {
             for (let a = 0; a < 3; a++) {
@@ -6596,25 +6233,15 @@
           const glow = document.createElement("div");
           glow.className = "tilt-glow";
           card.appendChild(glow);
-          let ticking = false;
-          let mX = 0, mY = 0;
           card.addEventListener("mousemove", (e) => {
-            mX = e.clientX;
-            mY = e.clientY;
-            if (!ticking) {
-              requestAnimationFrame(() => {
-                const r = card.getBoundingClientRect();
-                const x = (mX - r.left) / r.width;
-                const y = (mY - r.top) / r.height;
-                const rx = (0.5 - y) * strength;
-                const ry = (x - 0.5) * strength;
-                card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-5px)`;
-                glow.style.setProperty("--mx", x * 100 + "%");
-                glow.style.setProperty("--my", y * 100 + "%");
-                ticking = false;
-              });
-              ticking = true;
-            }
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width;
+            const y = (e.clientY - r.top) / r.height;
+            const rx = (0.5 - y) * strength;
+            const ry = (x - 0.5) * strength;
+            card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-5px)`;
+            glow.style.setProperty("--mx", x * 100 + "%");
+            glow.style.setProperty("--my", y * 100 + "%");
           });
           card.addEventListener("mouseleave", () => {
             card.style.transform =
