@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.czarconsultancy.com/sitemap.xml
+Sitemap: https://czarconsultancy.com/sitemap.xml
 
 # Disallow private/admin folders if any
 Disallow: /admin/
