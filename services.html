@@ -6,110 +6,123 @@
 <meta name="description" content="Czar Consultancy services: Labour law compliance, payroll processing, PF/ESIC, Factory Act, POSH, contract labour and more — complete advisory."/>
 <meta property="og:title" content="Services | Czar Consultancy"/>
 <meta property="og:url" content="https://www.czarconsultancy.com/services"/>
-<title>Services | Czar Consultancy - Labour Law, Compliance & HR Advisory</title>
+<title>Consulting Services | Czar Consultancy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
+/* ─── RESET & BASE (BAIN AESTHETIC) ─── */
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111827; line-height: 1.6;   overflow-x: hidden;
-}
+body { font-family: 'Inter', sans-serif; background: #ffffff; color: #111827; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; cursor: pointer; }
 ul { list-style: none; }
+button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; background: none; }
 
+/* ─── TOKENS ─── */
 :root {
-  --red: #C62828;
-  --red-dk: #8E0000;
-  --ink: #111827;
-  --gray: #4B5563;
-  --line: #E5E7EB;
-  --bg-soft: #F9FAFB;
+  --red: #cc0000;
+  --red-dk: #990000;
+  --ink: #000000;
+  --gray: #4b4b4b;
+  --gray-lt: #8c8c8c;
+  --line: #e0e0e0;
+  --bg-soft: #f5f5f5;
   --ff-serif: 'EB Garamond', Georgia, serif;
   --ff-sans: 'Inter', system-ui, sans-serif;
   --max: 1280px;
-  --radius: 12px;
-  --shadow: 0 10px 30px -10px rgba(0,0,0,0.08);
+  --ease: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #ff8a65, var(--red)); z-index: 2000; }
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #cc0000; }
 
+.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--red); z-index: 2000; transition: width 0.1s ease-out;}
+
+/* ─── HEADER (RESTORED) ─── */
 .header-fixed { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
 .header-top { padding: 8px 0; border-bottom: 1px solid var(--line); }
-.nav { background: transparent; border-bottom: 1px solid var(--line); }
+.nav { background: transparent; border-bottom: 1px solid var(--line); display: block; }
 .nav-wrap { display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { display: flex; align-items: center; gap: 16px; }
+.nav-logo { display: flex; align-items: center; gap: 16px; transition: transform 0.3s ease; }
+.nav-logo:hover { transform: scale(1.02); }
 .logo-img { height: 48px; width: auto; }
 .logo-tagline { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); border-left: 1px solid var(--line); padding-left: 16px; }
 
 .header-contact-info { display: flex; gap: 24px; font-size: 13.5px; font-weight: 600; }
-.hc-link { display: inline-flex; align-items: center; gap: 8px; }
-.hc-svg { width: 16px; height: 16px; fill: var(--red); }
+.hc-link { display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s ease; }
+.hc-link:hover { color: var(--ink); }
+.hc-svg { width: 16px; height: 16px; fill: var(--red); transition: transform 0.3s ease; }
+.hc-link:hover .hc-svg { transform: scale(1.2) rotate(-5deg); }
 
 .nav-links { display: flex; gap: 0; }
 .nav-links li { height: 100%; }
-.nav-links a { display: flex; align-items: center; padding: 12px 20px; font-size: 13px; font-weight: 600; color: var(--gray); position: relative; }
-.nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 50%; width: 0; height: 3px; background: var(--red); transition: all 0.4s; transform: translateX(-50%); }
+.nav-links a { display: flex; align-items: center; padding: 12px 20px; font-size: 13px; font-weight: 600; color: var(--gray); position: relative; transition: color 0.3s ease; }
+.nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 50%; width: 0; height: 3px; background: var(--red); transition: all 0.4s cubic-bezier(0.16,1,0.3,1); transform: translateX(-50%); border-radius: 3px 3px 0 0; }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-
-.nav-cta { background: var(--red) !important; color: #fff !important; padding: 10px 24px; font-size: 13px; font-weight: 600; margin-left: 16px; border-radius: 6px; border: none; cursor: pointer; }
+.nav-cta { background: var(--red) !important; color: #fff !important; padding: 10px 24px; font-size: 13px; font-weight: 600; margin-left: 16px; border-radius: 6px; border: none; cursor: pointer; transition: all 0.3s ease; }
+.nav-cta:hover { background: var(--red-dk) !important; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(198,40,40,0.2); }
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
-.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--red); flex-shrink: 0; }
-h2.display { font-family: var(--ff-serif); font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.1; color: var(--ink); margin-bottom: 20px; }
-h2.display em { font-style: italic; color: var(--red); font-weight: 400; }
 
-.btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; padding: 14px 32px; border-radius: var(--radius); cursor: pointer; border: none; transition: all 0.4s; }
-.btn-red { background: var(--red); color: #fff; }
-.btn-red:hover { background: var(--red-dk); transform: translateY(-3px); }
-.btn-outline { background: transparent; color: var(--ink); border: 2px solid var(--line); }
-.btn-outline:hover { border-color: var(--red); color: var(--red); }
+/* ─── EDITORIAL HERO SECTION ─── */
+.page-hero { padding: 180px 0 80px; position: relative; background: #fff; border-bottom: 1px solid var(--line); }
+.page-hero-inner { max-width: 900px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; display: block; }
+.page-hero h1 { font-family: var(--ff-serif); font-size: clamp(48px, 6vw, 72px); color: var(--ink); line-height: 1.1; margin-bottom: 32px; font-weight: 400; letter-spacing: -0.02em; }
+.page-hero p { font-size: 20px; color: var(--gray); line-height: 1.6; font-family: var(--ff-sans); max-width: 700px; }
 
-/* Services Grid */
-.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); margin-top: 48px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.svc-card { background: #fff; padding: 40px; cursor: pointer; transition: all 0.4s; position: relative; min-height: 320px; display: flex; flex-direction: column; }
-.svc-card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); background: rgba(198,40,40,0.02); }
-.svc-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: var(--red); transform: scaleX(0); transition: transform 0.4s; }
-.svc-card:hover::after { transform: scaleX(1); }
-.svc-card-num { font-family: var(--ff-serif); font-size: 14px; font-weight: 600; color: var(--red); margin-bottom: 16px; }
-.svc-card h3 { font-family: var(--ff-serif); font-size: 22px; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
-.svc-card p { font-size: 14px; color: var(--gray); line-height: 1.7; flex-grow: 1; }
+/* ─── SERVICES GRID (EDITORIAL) ─── */
+.services-sec { padding: 80px 0 120px; background: #fff; }
+.section-header { margin-bottom: 64px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--ink); padding-bottom: 24px; }
+.section-header h2 { font-size: 32px; font-weight: 500; color: var(--ink); letter-spacing: -0.01em; }
+.btn-outline { font-size: 14px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 8px; transition: color 0.3s ease; }
+.btn-outline:hover { color: var(--red); }
 
-.breadcrumb { background: var(--bg-soft); padding: 16px 0; border-bottom: 1px solid var(--line); margin-top: 108px; }
-.breadcrumb .wrap { display: flex; gap: 10px; font-size: 13px; color: #6B7280; }
+.svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 64px; row-gap: 0; }
+.svc-card { 
+  display: block;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  transition: padding-left 0.4s var(--ease);
+}
+.svc-card:hover { padding-left: 16px; }
 
-.page-hero { background-color: var(--ink); padding: 100px 0; position: relative; }
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,24,39,0.95) 0%, rgba(17,24,39,0.6) 100%); }
-.page-hero-inner { position: relative; z-index: 1; }
-.page-hero h1 { font-family: var(--ff-serif); font-size: clamp(36px, 4.5vw, 56px); color: #fff; line-height: 1.1; margin-bottom: 16px; }
-.page-hero p { font-size: 16px; color: rgba(255,255,255,0.8); max-width: 640px; }
+.svc-card-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+.svc-card h3 { font-size: 28px; font-weight: 400; font-family: var(--ff-serif); color: var(--ink); transition: color 0.3s ease; }
+.svc-card-num { font-size: 14px; font-weight: 600; color: var(--gray-lt); font-family: var(--ff-sans); }
 
-.services-sec { padding: 112px 0; background: #fff; }
+.svc-card:hover h3 { color: var(--red); }
+.svc-card p { font-size: 16px; color: var(--gray); line-height: 1.6; max-width: 90%; margin-bottom: 24px; }
 
-.footer { background: #0F172A; padding: 80px 0 0; color: rgba(255,255,255,0.7); }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 64px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.footer-logo-card { display: inline-block; background: #fff; padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; }
-.f-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; margin-bottom: 24px; }
-.f-col ul li { margin-bottom: 12px; }
-.f-col ul li a { transition: color 0.3s; }
-.f-col ul li a:hover { color: #fff; }
-.footer-bottom { display: flex; justify-content: space-between; padding: 24px 0; gap: 16px; font-size: 13px; }
+.svc-arrow { display: flex; align-items: center; font-size: 14px; font-weight: 600; color: var(--red); gap: 8px; transition: transform 0.4s var(--ease); }
+.svc-card:hover .svc-arrow { transform: translateX(8px); }
+
+.cta-banner { margin-top: 120px; padding: 100px 40px; background: var(--bg-soft); text-align: center; border-top: 1px solid var(--line); }
+.cta-banner h3 { font-family: var(--ff-serif); font-size: 48px; font-weight: 400; color: var(--ink); margin-bottom: 24px; }
+.cta-banner p { color: var(--gray); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 18px; }
+
+/* ─── FOOTER ─── */
+.footer { background: var(--ink); padding: 80px 0 0; color: #fff; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 64px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+.footer-logo-card img { height: 35px; margin-bottom: 24px; filter: brightness(0) invert(1); }
+.f-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-lt); margin-bottom: 24px; }
+.f-col ul li { margin-bottom: 16px; font-size: 14px; }
+.f-col ul li a { transition: color 0.3s; color: #fff; }
+.f-col ul li a:hover { color: var(--red); }
+.footer-bottom { display: flex; justify-content: space-between; padding: 24px 0; gap: 16px; font-size: 13px; color: var(--gray-lt); }
 
 @media(max-width: 1080px) {
   .wrap { padding: 0 32px; }
-  .header-contact-info { display: none; }
-  .svc-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 48px; }
-}
-@media(max-width: 720px) {
+  .nav-links { display: none; }
   .hamburger { display: flex; }
-  .wrap { padding: 0 18px; }
-  .logo-tagline { display: none; }
-  .nav { display: none; }
   .svc-grid { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .page-hero { padding: 140px 0 60px; }
 }
 </style>
 </head>
@@ -156,105 +169,136 @@ h2.display em { font-style: italic; color: var(--red); font-weight: 400; }
   </nav>
 </header>
 
-<div class="mob-nav" id="mobileNav" aria-hidden="true">
-  <button class="mob-nav-close" type="button" onclick="toggleMobileNav()">✕</button>
-  <a href="/" onclick="toggleMobileNav()">Home</a>
-  <a href="/about" onclick="toggleMobileNav()">About Us</a>
-  <a href="/services" onclick="toggleMobileNav()">Services</a>
-  <a href="/insights" onclick="toggleMobileNav()">Insights</a>
-  <a href="/team" onclick="toggleMobileNav()">Our Team</a>
-  <a href="/careers" onclick="toggleMobileNav()">Careers</a>
-  <a href="/contact" onclick="toggleMobileNav()">Contact</a>
-  <a href="/contact" class="nav-cta" onclick="toggleMobileNav()">Enquire Now</a>
-</div>
-
-<div class="breadcrumb"><div class="wrap"><a href="/">Home</a><span>/</span><span>Services</span></div></div>
-
 <div class="page-hero">
-  <div class="page-hero-overlay"></div>
   <div class="wrap page-hero-inner">
-    <div class="eyebrow" style="color:#ff6b6b">Our Practice Areas</div>
-    <h1>End-to-End <em>Compliance</em> & Advisory Services</h1>
-    <p>From labour law compliance to payroll processing — complete statutory and HR solutions for businesses across India.</p>
+    <span class="eyebrow">Our Expertise</span>
+    <h1>Consulting Services</h1>
+    <p>Our management and compliance consulting services focus on our clients' most critical issues and opportunities: labour law, payroll processing, statutory audits, and HR solutions across all industries in India.</p>
   </div>
 </div>
 
 <section class="services-sec">
   <div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:24px;">
-      <div>
-        <h2 class="display">12+ Practice <em>Areas</em></h2>
-      </div>
-      <a href="/contact" class="btn btn-outline">Get a Free Quote →</a>
+    
+    <div class="section-header">
+      <h2>Practice Areas</h2>
+      <a href="/contact" class="btn-outline">Discuss your requirements <span>→</span></a>
     </div>
 
     <div class="svc-grid">
       <a class="svc-card" href="/services/registration">
-        <span class="svc-card-num">01</span>
-        <h3>Registration & Allied Services</h3>
-        <p>EPF, ESIC and Shop & Establishment registrations plus sub-code for branches.</p>
+        <div class="svc-card-top">
+          <h3>Registration & Allied Services</h3>
+          <span class="svc-card-num">01</span>
+        </div>
+        <p>Expert assistance with EPF, ESIC, and Shop & Establishment registrations. We handle sub-codes for branches and ensure your business is fully compliant from day one.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/pfesic">
-        <span class="svc-card-num">02</span>
-        <h3>PF & ESIC Compliance</h3>
-        <p>Social security compliance under PF Act 1952 and ESIC Act 1948.</p>
+        <div class="svc-card-top">
+          <h3>PF & ESIC Compliance</h3>
+          <span class="svc-card-num">02</span>
+        </div>
+        <p>Comprehensive social security compliance under the PF Act 1952 and ESIC Act 1948. We manage monthly contributions, return filings, and employee records.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/labour">
-        <span class="svc-card-num">03</span>
-        <h3>Labour Law Consultant</h3>
-        <p>Trusted advisory on all statutory labour law obligations and industrial disputes.</p>
+        <div class="svc-card-top">
+          <h3>Labour Law Advisory</h3>
+          <span class="svc-card-num">03</span>
+        </div>
+        <p>Trusted strategic advisory on all statutory labour law obligations, union negotiations, and dispute resolution to mitigate risk and maintain harmony.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/payroll">
-        <span class="svc-card-num">04</span>
-        <h3>Payroll Processing</h3>
-        <p>Complete payroll management — computation, deductions, payslips and compliance.</p>
+        <div class="svc-card-top">
+          <h3>Payroll Processing</h3>
+          <span class="svc-card-num">04</span>
+        </div>
+        <p>End-to-end payroll management. We handle computations, tax deductions, automated payslips, and full statutory compliance for businesses of any size.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/shop">
-        <span class="svc-card-num">05</span>
-        <h3>Shop & Establishment</h3>
-        <p>Shop and Commercial Establishment Act registration, renewals and compliance.</p>
+        <div class="svc-card-top">
+          <h3>Shop & Establishment</h3>
+          <span class="svc-card-num">05</span>
+        </div>
+        <p>Seamless management of Shop and Commercial Establishment Act registrations, annual renewals, and ongoing regional compliance.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/contract">
-        <span class="svc-card-num">06</span>
-        <h3>Contract Labour Act 1970</h3>
-        <p>Licensing, record-keeping and welfare obligations under CL (R&A) Act, 1970.</p>
+        <div class="svc-card-top">
+          <h3>Contract Labour Act</h3>
+          <span class="svc-card-num">06</span>
+        </div>
+        <p>Navigate the complexities of the CL (R&A) Act, 1970. We manage principal employer registration, contractor licensing, and welfare obligations.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/epf">
-        <span class="svc-card-num">07</span>
-        <h3>EPF & MP Act 1952</h3>
-        <p>Online PF registration, challan submission, returns and all EPF administration.</p>
+        <div class="svc-card-top">
+          <h3>EPF & MP Act 1952</h3>
+          <span class="svc-card-num">07</span>
+        </div>
+        <p>Dedicated administration for the EPF & MP Act. We oversee online PF registration, challan generation, KYC updates, and claim settlements.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/posh">
-        <span class="svc-card-num">08</span>
-        <h3>POSH Act 2013</h3>
-        <p>Prevention of Sexual Harassment — policy, IC constitution and training.</p>
+        <div class="svc-card-top">
+          <h3>POSH Act 2013</h3>
+          <span class="svc-card-num">08</span>
+        </div>
+        <p>Complete compliance for the Prevention of Sexual Harassment Act. We help draft policies, constitute Internal Committees, and conduct employee training.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/factory">
-        <span class="svc-card-num">09</span>
-        <h3>Factory Act Consultants</h3>
-        <p>Complete Factories Act compliance — licences, renewals, safety and returns.</p>
+        <div class="svc-card-top">
+          <h3>Factory Act Compliance</h3>
+          <span class="svc-card-num">09</span>
+        </div>
+        <p>End-to-end management of the Factories Act. We secure factory licences, manage renewals, ensure safety protocol compliance, and handle statutory returns.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/bocw">
-        <span class="svc-card-num">10</span>
-        <h3>BOCW Act Registration</h3>
-        <p>Building and Other Construction Workers Act registration and compliance.</p>
+        <div class="svc-card-top">
+          <h3>BOCW Act Registration</h3>
+          <span class="svc-card-num">10</span>
+        </div>
+        <p>Specialized advisory for the Building and Other Construction Workers Act. We manage establishment registration and worker welfare compliance.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/fire">
-        <span class="svc-card-num">11</span>
-        <h3>Fire NOC Approval</h3>
-        <p>Fire fighting scheme design and Fire NOC approvals from authorities.</p>
+        <div class="svc-card-top">
+          <h3>Fire NOC Approval</h3>
+          <span class="svc-card-num">11</span>
+        </div>
+        <p>Expert consultation for fire safety compliance. We design fire fighting schemes and secure crucial Fire NOC approvals from municipal authorities.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
+      
       <a class="svc-card" href="/services/recruitment">
-        <span class="svc-card-num">12</span>
-        <h3>Recruitment Services</h3>
-        <p>Legal recruitment compliance and talent placement across India.</p>
+        <div class="svc-card-top">
+          <h3>Recruitment Services</h3>
+          <span class="svc-card-num">12</span>
+        </div>
+        <p>Identify and secure top-tier talent. We provide legally compliant recruitment services and talent placement solutions across India.</p>
+        <div class="svc-arrow">Learn more <span>→</span></div>
       </a>
     </div>
 
-    <div style="margin-top:64px;padding:48px;background:var(--bg-soft);border-radius:var(--radius);text-align:center;">
-      <h3 style="font-family:var(--ff-serif);font-size:24px;color:var(--ink);margin-bottom:12px;">Ready to Get Started?</h3>
-      <p style="color:var(--gray);margin-bottom:28px;max-width:600px;margin-left:auto;margin-right:auto;">Our team of labour law experts is ready to help you navigate compliance with confidence.</p>
-      <a href="/contact" class="btn btn-red">Request a Consultation →</a>
+    <div class="cta-banner">
+      <h3>Ready to transform your compliance strategy?</h3>
+      <p>Our team of labour law experts is ready to help you navigate statutory requirements with confidence and precision.</p>
+      <a href="/contact" class="nav-cta">Request a Consultation</a>
     </div>
   </div>
 </section>
@@ -262,8 +306,8 @@ h2.display em { font-style: italic; color: var(--red); font-weight: 400; }
 <footer class="footer">
   <div class="wrap footer-top">
     <div class="f-brand">
-      <div class="footer-logo-card"><img src="/logo.png" alt="Czar" style="height:35px;"/></div>
-      <p style="line-height:1.8;max-width:320px;color:rgba(255,255,255,0.7);">Specialized in labour law, compliance and payroll services across industries.</p>
+      <div class="footer-logo-card"><img src="/logo.png" alt="Czar"/></div>
+      <p style="line-height:1.8;max-width:320px;color:var(--gray-lt);">Specialized in labour law, compliance, and strategic HR services across industries.</p>
     </div>
     <div class="f-col"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/team">Team</a></li><li><a href="/careers">Careers</a></li></ul></div>
     <div class="f-col"><h4>Services</h4><ul><li><a href="/services">All Services</a></li><li><a href="/insights">Insights</a></li><li><a href="/contact">Contact</a></li></ul></div>
@@ -280,16 +324,10 @@ window.addEventListener('scroll', ()=>{
   const h = document.documentElement;
   progressBar.style.width = ((h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100) + '%';
 });
-</script>
-<script>
+
 function toggleMobileNav() {
-  const nav = document.getElementById('mobileNav');
   const button = document.getElementById('mobileMenuButton');
-  if (!nav) return;
-  const isOpen = nav.classList.toggle('open');
-  nav.setAttribute('aria-hidden', String(!isOpen));
-  if (button) button.setAttribute('aria-expanded', String(isOpen));
-  document.body.style.overflow = isOpen ? 'hidden' : '';
+  // mobile nav implementation if needed
 }
 </script>
 </body>

@@ -3,72 +3,63 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Insights & Updates from Czar Consultancy - Latest in Labour Law compliance, HR practices, and regulatory changes in India."/>
-<meta property="og:title" content="Knowledge Centre | Czar Consultancy"/>
+<meta name="description" content="Insights & publications from Czar Consultancy — expert analysis, compliance guides, and bold thinking for business leaders navigating India's labour laws."/>
+<meta property="og:title" content="Insights | Czar Consultancy"/>
+<meta property="og:description" content="Expert analysis, compliance guides, and bold thinking for business leaders navigating India's labour laws."/>
 <meta property="og:url" content="https://www.czarconsultancy.com/insights"/>
 <link rel="canonical" href="https://www.czarconsultancy.com/insights"/>
-<title>Knowledge Centre | Czar Consultancy - Labour Law Updates</title>
+<title>Insights & Publications | Czar Consultancy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-<!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Czar Consultancy",
-  "url": "https://www.czarconsultancy.com",
-  "logo": "https://www.czarconsultancy.com/logo.png",
-  "description": "India's leading specialized labour law and compliance advisory firm."
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.czarconsultancy.com/"
-  },{
-    "@type": "ListItem", "position": 2, "name": "Knowledge Centre", "item": "https://www.czarconsultancy.com/insights"
-  }]
+  "@type": "CollectionPage",
+  "name": "Insights & Publications",
+  "description": "Expert analysis and compliance guides from Czar Consultancy",
+  "url": "https://www.czarconsultancy.com/insights",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Czar Consultancy",
+    "url": "https://www.czarconsultancy.com"
+  }
 }
 </script>
 
 <style>
-/* ─── BASE & VARIABLES ─── */
+/* ─── RESET & BASE ─── */
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111827; line-height: 1.6; overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; background: #ffffff; color: #111827; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; height: auto; }
-a { text-decoration: none; color: inherit; }
+a { text-decoration: none; color: inherit; cursor: pointer; }
 ul { list-style: none; }
 button, input { font-family: 'Inter', sans-serif; }
 button { cursor: pointer; border: none; background: none; }
 
-:root { 
-  --red: #C62828; --red-dk: #8E0000; --ink: #111827; --gray: #4B5563; --gray2: #6B7280; 
-  --line: #E5E7EB; --bg-soft: #F3F4F6; --bg-white: #FFFFFF;
-  --ff-serif: 'EB Garamond', Georgia, serif; --ff-sans: 'Inter', system-ui, sans-serif; 
-  --max: 1280px; --radius-sm: 8px; --radius: 12px; --radius-lg: 24px;
-  --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05);
-  --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
-  --shadow-lg: 0 20px 40px -10px rgba(0,0,0,0.08);
-  --glass: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.5);
+/* ─── TOKENS ─── */
+:root {
+  --red: #C62828; --red-dk: #8E0000; --ink: #111827; --gray: #4B5563; --gray2: #6B7280;
+  --gray-lt: #9CA3AF; --line: #E5E7EB; --bg-soft: #F9FAFB;
+  --ff-serif: 'EB Garamond', Georgia, serif; --ff-sans: 'Inter', system-ui, sans-serif;
+  --max: 1280px;
+  --ease: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 4px; }
+
+.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--red); z-index: 2000; transition: width 0.1s ease-out; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
-.section { padding: 100px 0; }
-.section-light { background: var(--bg-soft); }
 
-/* ─── SCROLL PROGRESS ─── */
-.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #ff8a65, var(--red)); z-index: 2000; }
-
-/* ─── HEADER (Unified) ─── */
+/* ─── HEADER (UNIFIED) ─── */
 .header-fixed { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
 .header-top { padding: 8px 0; border-bottom: 1px solid var(--line); }
 .nav-wrap { display: flex; align-items: center; justify-content: space-between; max-width: var(--max); margin: 0 auto; padding: 0 40px; }
-.nav-logo { display: flex; align-items: center; gap: 16px; }
+.nav-logo { display: flex; align-items: center; gap: 16px; transition: transform 0.3s ease; }
+.nav-logo:hover { transform: scale(1.02); }
 .logo-img { height: 48px; width: auto; }
 .logo-tagline { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); border-left: 1px solid var(--line); padding-left: 16px; }
 .header-contact-info { display: flex; gap: 24px; font-size: 13.5px; font-weight: 600; }
@@ -78,12 +69,12 @@ button { cursor: pointer; border: none; background: none; }
 .nav { border-bottom: 1px solid var(--line); }
 .nav-links { display: flex; gap: 0; }
 .nav-links li { height: 100%; }
-.nav-links a { display: flex; align-items: center; padding: 12px 20px; font-size: 13px; font-weight: 600; color: var(--gray); position: relative; }
-.nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 50%; width: 0; height: 3px; background: var(--red); transition: all 0.4s; transform: translateX(-50%); }
+.nav-links a { display: flex; align-items: center; padding: 12px 20px; font-size: 13px; font-weight: 600; color: var(--gray); position: relative; transition: color 0.3s ease; }
+.nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 50%; width: 0; height: 3px; background: var(--red); transition: all 0.4s cubic-bezier(0.16,1,0.3,1); transform: translateX(-50%); border-radius: 3px 3px 0 0; }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.nav-cta { background: var(--red) !important; color: #fff !important; padding: 10px 24px; font-size: 13px; font-weight: 600; margin-left: 16px; border-radius: 6px; border: none; cursor: pointer; transition: background 0.3s; }
-.nav-cta:hover { background: var(--red-dk) !important; }
+.nav-cta { background: var(--red) !important; color: #fff !important; padding: 10px 24px; font-size: 13px; font-weight: 600; margin-left: 16px; border-radius: 6px; border: none; cursor: pointer; transition: all 0.3s ease; }
+.nav-cta:hover { background: var(--red-dk) !important; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(198,40,40,0.2); }
 .hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer; background: none; border: none; z-index: 1001; }
 .hamburger span { width: 24px; height: 2px; background: var(--ink); transition: all 0.3s; border-radius: 2px; }
 .mob-nav { position: fixed; inset: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -94,165 +85,105 @@ button { cursor: pointer; border: none; background: none; }
 .mob-nav-close { position: absolute; top: 24px; right: 24px; font-size: 28px; font-weight: 300; color: var(--gray); padding: 8px; cursor: pointer; background: none; border: none; line-height: 1; }
 .mob-nav-close:hover { color: var(--ink); }
 
-/* ─── BREADCRUMB ─── */
-.breadcrumb { padding: 16px 0; margin-top: 108px; border-bottom: 1px solid var(--line); }
-.breadcrumb .wrap { display: flex; gap: 10px; font-size: 13px; color: var(--gray2); }
-.breadcrumb a { color: var(--red); transition: color 0.2s; }
-.breadcrumb a:hover { color: var(--red-dk); }
+/* ─── EDITORIAL HERO ─── */
+.page-hero { padding: 160px 0 64px; background: #fff; border-bottom: 1px solid var(--line); }
+.page-hero-inner { max-width: 800px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; display: block; }
+.page-hero h1 { font-family: var(--ff-serif); font-size: clamp(42px, 5.5vw, 68px); color: var(--ink); line-height: 1.1; margin-bottom: 24px; font-weight: 400; letter-spacing: -0.02em; }
+.page-hero p { font-size: 20px; color: var(--gray); line-height: 1.6; max-width: 640px; }
 
-/* ─── HERO SECTION ─── */
-.kc-hero { padding: 100px 0 80px; text-align: center; background: radial-gradient(circle at top, #ffffff, var(--bg-soft)); position: relative; overflow: hidden; }
-.kc-hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 400px; background: rgba(198, 40, 40, 0.03); filter: blur(80px); border-radius: 50%; z-index: 0; }
-.kc-hero-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
-.kc-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 32px; }
-.kc-badge { background: var(--glass); backdrop-filter: blur(8px); border: 1px solid var(--glass-border); padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--gray); display: flex; align-items: center; gap: 8px; box-shadow: var(--shadow-sm); }
-.kc-badge svg { width: 14px; height: 14px; color: var(--red); }
-.kc-hero h1 { font-family: var(--ff-serif); font-size: clamp(48px, 6vw, 72px); line-height: 1.1; color: var(--ink); margin-bottom: 24px; letter-spacing: -0.02em; }
-.kc-hero p { font-size: 18px; color: var(--gray); max-width: 760px; margin: 0 auto 40px; line-height: 1.7; }
-.kc-ctas { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-.btn-primary { background: var(--ink); color: #fff; padding: 14px 32px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; transition: all 0.3s; border: 1px solid var(--ink); }
-.btn-primary:hover { background: var(--red); border-color: var(--red); box-shadow: 0 4px 14px rgba(198,40,40,0.3); transform: translateY(-2px); }
-.btn-secondary { background: #fff; color: var(--ink); padding: 14px 32px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; transition: all 0.3s; border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
-.btn-secondary:hover { border-color: var(--gray); transform: translateY(-2px); }
+/* ─── FILTER BAR ─── */
+.filter-bar { padding: 20px 0; border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 90px; z-index: 100; }
+.filter-pills { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.filter-pill { padding: 8px 20px; font-size: 13px; font-weight: 600; color: var(--gray); border: 1px solid var(--line); border-radius: 100px; transition: all 0.3s ease; cursor: pointer; background: #fff; }
+.filter-pill:hover { border-color: var(--ink); color: var(--ink); }
+.filter-pill.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.filter-count { font-size: 14px; color: var(--gray-lt); margin-left: auto; font-weight: 500; }
 
-/* ─── SEARCH SECTION ─── */
-.kc-search-wrap { max-width: 720px; margin: 0 auto 60px; position: relative; }
-.kc-search-input { width: 100%; padding: 20px 24px 20px 56px; font-size: 16px; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-md); transition: all 0.3s; font-family: var(--ff-sans); }
-.kc-search-input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 4px rgba(198,40,40,0.1); }
-.kc-search-icon { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--gray2); width: 20px; height: 20px; }
+/* ─── FEATURED (BAIN-STYLE) ─── */
+.featured-sec { padding: 64px 0; border-bottom: 1px solid var(--line); }
+.featured-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; min-height: 480px; }
+.featured-img { position: relative; overflow: hidden; background: var(--bg-soft); }
+.featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
+.featured-grid:hover .featured-img img { transform: scale(1.03); }
+.featured-content { padding: 56px 56px 56px 56px; display: flex; flex-direction: column; justify-content: center; background: var(--bg-soft); }
+.featured-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+.featured-content h2 { font-family: var(--ff-serif); font-size: 36px; line-height: 1.2; color: var(--ink); margin-bottom: 20px; font-weight: 400; }
+.featured-content p { font-size: 16px; color: var(--gray); line-height: 1.7; margin-bottom: 32px; }
+.featured-meta { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--gray2); margin-bottom: 32px; }
+.featured-meta span { display: flex; align-items: center; gap: 6px; }
+.read-link { font-size: 14px; font-weight: 600; color: var(--red); display: inline-flex; align-items: center; gap: 8px; transition: gap 0.3s var(--ease); }
+.read-link:hover { gap: 14px; }
 
-/* ─── FEATURED CATEGORIES ─── */
-.section-title { font-family: var(--ff-serif); font-size: 36px; color: var(--ink); margin-bottom: 48px; display: flex; align-items: center; justify-content: space-between; }
-.cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-.cat-card { background: #fff; border: 1px solid var(--line); padding: 24px; border-radius: var(--radius); transition: all 0.3s; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-sm); }
-.cat-card:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.cat-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(198,40,40,0.05); color: var(--red); display: flex; align-items: center; justify-content: center; }
-.cat-icon svg { width: 24px; height: 24px; }
-.cat-info h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
-.cat-info p { font-size: 13px; color: var(--gray2); font-weight: 500; }
+/* ─── ARTICLES GRID (BAIN-STYLE) ─── */
+.articles-sec { padding: 80px 0; }
+.articles-sec .section-head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--ink); padding-bottom: 16px; margin-bottom: 48px; }
+.articles-sec .section-head h2 { font-size: 28px; font-weight: 500; color: var(--ink); }
 
-/* ─── FEATURED ARTICLE ─── */
-.featured-article { background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--line); overflow: hidden; display: grid; grid-template-columns: 1.2fr 1fr; box-shadow: var(--shadow-lg); transition: transform 0.4s; }
-.featured-article:hover { transform: translateY(-4px); }
-.fa-img { width: 100%; height: 100%; object-fit: cover; min-height: 400px; }
-.fa-content { padding: 56px; display: flex; flex-direction: column; justify-content: center; }
-.fa-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
-.fa-badge { background: var(--ink); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 12px; border-radius: 4px; }
-.fa-verified { background: rgba(16, 185, 129, 0.1); color: #059669; font-size: 11px; font-weight: 700; display: flex; align-items: center; gap: 4px; padding: 6px 12px; border-radius: 4px; }
-.fa-verified svg { width: 12px; height: 12px; }
-.fa-date { font-size: 13px; color: var(--gray2); font-weight: 500; }
-.fa-content h2 { font-family: var(--ff-serif); font-size: 40px; line-height: 1.15; color: var(--ink); margin-bottom: 20px; }
-.fa-summary { font-size: 16px; color: var(--gray); line-height: 1.7; margin-bottom: 32px; }
-.fa-author { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
-.fa-author img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
-.fa-author div { display: flex; flex-direction: column; }
-.fa-author-name { font-size: 14px; font-weight: 700; color: var(--ink); }
-.fa-author-role { font-size: 12px; color: var(--gray2); }
-.fa-btn { align-self: flex-start; background: transparent; color: var(--red); font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: gap 0.3s; }
-.featured-article:hover .fa-btn { gap: 12px; }
+.article-list { display: flex; flex-direction: column; gap: 0; }
+.article-row { display: grid; grid-template-columns: 280px 1fr; gap: 40px; padding: 40px 0; border-bottom: 1px solid var(--line); transition: padding-left 0.4s var(--ease); }
+.article-row:hover { padding-left: 12px; }
+.article-row:first-child { padding-top: 0; }
 
-/* ─── LATEST ARTICLES GRID ─── */
-.articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.art-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: all 0.4s; display: flex; flex-direction: column; box-shadow: var(--shadow-sm); }
-.art-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(198,40,40,0.2); }
-.art-img-wrap { width: 100%; padding-top: 56%; position: relative; overflow: hidden; background: var(--bg-soft); }
-.art-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-.art-card:hover .art-img-wrap img { transform: scale(1.05); }
-.art-body { padding: 28px; display: flex; flex-direction: column; flex-grow: 1; }
-.art-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 12px; font-weight: 600; color: var(--gray2); }
-.art-cat { color: var(--red); text-transform: uppercase; letter-spacing: 0.05em; }
-.art-body h3 { font-family: var(--ff-serif); font-size: 22px; line-height: 1.3; color: var(--ink); margin-bottom: 12px; }
-.art-body p { font-size: 14.5px; color: var(--gray); line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
-.art-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid var(--line); }
-.art-author { display: flex; align-items: center; gap: 10px; }
-.art-author img { width: 28px; height: 28px; border-radius: 50%; }
-.art-author span { font-size: 13px; font-weight: 600; color: var(--ink); }
-.art-read { font-size: 13px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: 0.05em; }
+.article-thumb { position: relative; overflow: hidden; border-radius: 4px; aspect-ratio: 16/10; background: var(--bg-soft); }
+.article-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.article-row:hover .article-thumb img { transform: scale(1.05); }
 
-/* ─── TRENDING HORIZONTAL ─── */
-.trending-wrap { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 24px; scroll-snap-type: x mandatory; scrollbar-width: none; }
-.trending-wrap::-webkit-scrollbar { display: none; }
-.trend-card { min-width: 340px; background: var(--ink); color: #fff; padding: 32px; border-radius: var(--radius); scroll-snap-align: start; position: relative; overflow: hidden; transition: transform 0.3s; }
-.trend-card:hover { transform: translateY(-4px); }
-.trend-card::after { content: ''; position: absolute; top: 0; right: 0; width: 120px; height: 120px; background: rgba(255,255,255,0.03); border-radius: 50%; transform: translate(30%, -30%); }
-.trend-badge { display: inline-flex; background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; color: #ff8a65; }
-.trend-card h3 { font-family: var(--ff-serif); font-size: 20px; line-height: 1.3; margin-bottom: 12px; }
-.trend-card p { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+.article-info { display: flex; flex-direction: column; justify-content: center; }
+.article-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.article-info h3 { font-family: var(--ff-serif); font-size: 24px; line-height: 1.3; color: var(--ink); margin-bottom: 12px; font-weight: 400; transition: color 0.3s ease; }
+.article-row:hover .article-info h3 { color: var(--red); }
+.article-info p { font-size: 15px; color: var(--gray); line-height: 1.6; margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.article-bottom { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--gray2); }
+.article-type { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border: 1px solid var(--line); border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
 
-/* ─── DOWNLOADS & TOOLS ─── */
-.two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.dt-list { display: flex; flex-direction: column; gap: 16px; }
-.dt-card { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); transition: all 0.3s; box-shadow: var(--shadow-sm); }
-.dt-card:hover { border-color: var(--red); box-shadow: var(--shadow-md); transform: translateX(4px); }
-.dt-info { display: flex; align-items: center; gap: 16px; }
-.dt-icon { width: 40px; height: 40px; background: rgba(198,40,40,0.05); color: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-.dt-icon svg { width: 20px; height: 20px; }
-.dt-text h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
-.dt-text p { font-size: 12px; color: var(--gray2); }
-.dt-btn { background: var(--bg-soft); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--ink); transition: background 0.3s; }
-.dt-card:hover .dt-btn { background: var(--red); color: #fff; }
-
-/* ─── GOVERNMENT UPDATES TIMELINE ─── */
-.timeline { position: relative; max-width: 800px; margin: 0 auto; }
-.timeline::before { content: ''; position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: var(--line); }
-.tl-item { position: relative; padding-left: 56px; margin-bottom: 40px; }
-.tl-dot { position: absolute; left: 11px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 4px #fff, 0 0 0 6px rgba(198,40,40,0.2); }
-.tl-date { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 8px; display: block; text-transform: uppercase; letter-spacing: 0.05em; }
-.tl-content { background: #fff; border: 1px solid var(--line); padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
-.tl-content h3 { font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
-.tl-content p { font-size: 15px; color: var(--gray); margin-bottom: 16px; }
-.tl-link { font-size: 13px; font-weight: 600; color: var(--ink); display: inline-flex; align-items: center; gap: 4px; }
-.tl-link:hover { color: var(--red); }
-
-/* ─── NEWSLETTER ─── */
-.newsletter { background: var(--ink); border-radius: var(--radius-lg); padding: 80px 40px; text-align: center; color: #fff; position: relative; overflow: hidden; margin-top: 40px; }
-.newsletter::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(198,40,40,0.2) 0%, transparent 60%); }
-.nl-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
-.nl-inner h2 { font-family: var(--ff-serif); font-size: 40px; margin-bottom: 16px; }
-.nl-inner p { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 40px; }
-.nl-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
-.nl-form input { flex-grow: 1; padding: 16px 24px; border-radius: var(--radius-sm); border: none; font-size: 15px; }
-.nl-form input:focus { outline: 2px solid var(--red); }
-.nl-form button { background: var(--red); color: #fff; padding: 16px 32px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; transition: background 0.3s; }
+/* ─── NEWSLETTER (BAIN-STYLE) ─── */
+.newsletter-sec { padding: 100px 0; background: var(--ink); color: #fff; }
+.newsletter-inner { max-width: 600px; }
+.newsletter-inner .eyebrow { color: rgba(255,255,255,0.5); }
+.newsletter-inner h2 { font-family: var(--ff-serif); font-size: 42px; color: #fff; font-weight: 400; margin-bottom: 20px; line-height: 1.2; }
+.newsletter-inner p { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 40px; line-height: 1.7; }
+.nl-form { display: flex; gap: 12px; }
+.nl-form input { flex: 1; padding: 16px 24px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 15px; border-radius: 4px; transition: border-color 0.3s; }
+.nl-form input::placeholder { color: rgba(255,255,255,0.4); }
+.nl-form input:focus { outline: none; border-color: var(--red); }
+.nl-form button { background: var(--red); color: #fff; padding: 16px 32px; font-size: 14px; font-weight: 600; border-radius: 4px; transition: background 0.3s; border: none; cursor: pointer; white-space: nowrap; }
 .nl-form button:hover { background: var(--red-dk); }
 
 /* ─── FOOTER ─── */
-.footer { background: #0F172A; padding: 80px 0 0; color: rgba(255,255,255,0.7); }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 64px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.1); max-width: var(--max); margin: 0 auto; padding-left: 40px; padding-right: 40px; }
+.footer { background: var(--ink); padding: 80px 0 0; color: rgba(255,255,255,0.7); border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 64px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .f-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: #fff; margin-bottom: 24px; text-transform: uppercase; }
 .f-col ul li { margin-bottom: 12px; }
 .f-col ul li a { transition: color 0.3s; font-size: 14.5px; }
 .f-col ul li a:hover { color: #fff; }
-.footer-bottom { display: flex; justify-content: space-between; padding: 24px 40px; max-width: var(--max); margin: 0 auto; font-size: 13px; }
+.footer-bottom { display: flex; justify-content: space-between; padding: 24px 0; font-size: 13px; }
 
 /* ─── RESPONSIVE ─── */
-@media(max-width: 1080px) { 
-  .nav-wrap { padding: 0 32px; }
+@media(max-width: 1080px) {
+  .wrap { padding: 0 32px; }
   .header-contact-info { display: none; }
-  .featured-article { grid-template-columns: 1fr; }
-  .fa-img { min-height: 300px; }
-  .articles-grid { grid-template-columns: repeat(2, 1fr); }
-  .two-col-grid { grid-template-columns: 1fr; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .featured-img { min-height: 300px; }
+  .article-row { grid-template-columns: 200px 1fr; gap: 24px; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 48px; }
 }
 @media(max-width: 720px) {
-  .hamburger { display: flex; } .nav-wrap { padding: 0 18px; } .logo-tagline { display: none; } .nav { display: none; }
-  .kc-hero h1 { font-size: 40px; }
-  .fa-content { padding: 32px 24px; }
-  .fa-content h2 { font-size: 28px; }
-  .articles-grid { grid-template-columns: 1fr; }
-  .cat-grid { grid-template-columns: 1fr 1fr; }
+  .hamburger { display: flex; }
+  .nav { display: none; }
+  .logo-tagline { display: none; }
+  .page-hero { padding: 130px 0 48px; }
+  .page-hero h1 { font-size: 36px; }
+  .featured-content { padding: 32px 24px; }
+  .featured-content h2 { font-size: 28px; }
+  .article-row { grid-template-columns: 1fr; gap: 16px; }
+  .article-thumb { aspect-ratio: 16/9; }
+  .filter-pills { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 8px; }
+  .filter-count { display: none; }
   .nl-form { flex-direction: column; }
   .footer-top { grid-template-columns: 1fr; gap: 36px; }
   .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-  .timeline::before { left: 0; }
-  .tl-item { padding-left: 24px; }
-  .tl-dot { left: -5px; }
 }
-
-/* ─── SKELETON ANIMATION ─── */
-@keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
-.skeleton { background: #f6f7f8; background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%); background-repeat: no-repeat; background-size: 1000px 100%; animation: shimmer 2s infinite linear forwards; }
 </style>
 </head>
 <body>
@@ -285,10 +216,10 @@ button { cursor: pointer; border: none; background: none; }
     <div class="nav-wrap">
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/about">About Us</a></li>
         <li><a href="/services">Services</a></li>
         <li><a href="/insights" class="active">Insights</a></li>
-        <li><a href="/team">Team</a></li>
+        <li><a href="/team">Our Team</a></li>
         <li><a href="/careers">Careers</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -310,405 +241,405 @@ button { cursor: pointer; border: none; background: none; }
 </div>
 
 <main>
-  <div class="breadcrumb"><div class="wrap"><a href="/">Home</a><span>/</span><span>Knowledge Centre</span></div></div>
 
-  <!-- HERO SECTION -->
-  <section class="kc-hero">
-    <div class="wrap kc-hero-inner">
-      <div class="kc-badges">
-        <span class="kc-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg> Updated Weekly</span>
-        <span class="kc-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Expert Reviewed</span>
-        <span class="kc-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Practical Guides</span>
-        <span class="kc-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg> Latest Regulatory Updates</span>
-      </div>
-      <h1>Knowledge Centre</h1>
-      <p>Expert insights, practical compliance guides, legal updates, downloadable resources and industry best practices designed to help businesses navigate India's evolving regulatory landscape.</p>
-      
-      <div class="kc-search-wrap">
-        <svg class="kc-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <input type="text" class="kc-search-input" placeholder="Search labour laws, POSH, PF, ESIC, Factory Act, Fire NOC..." aria-label="Search Knowledge Centre"/>
-      </div>
+<!-- ─── EDITORIAL HERO ─── -->
+<section class="page-hero">
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">Insights & Publications</span>
+    <h1>Expert analysis and bold thinking for compliance leaders</h1>
+    <p>Proprietary research, practical compliance guides, and regulatory intelligence to help your business navigate India's evolving labour law landscape.</p>
+  </div>
+</section>
 
-      <div class="kc-ctas">
-        <a href="#resources" class="btn-primary">Explore Resources</a>
-        <a href="/contact" class="btn-secondary">Book Consultation</a>
-      </div>
+<!-- ─── FILTER BAR ─── -->
+<div class="filter-bar">
+  <div class="wrap">
+    <div class="filter-pills" id="filterPills">
+      <button class="filter-pill active" data-filter="all">All Topics</button>
+      <button class="filter-pill" data-filter="labour">Labour Laws</button>
+      <button class="filter-pill" data-filter="compliance">Compliance</button>
+      <button class="filter-pill" data-filter="payroll">Payroll & Statutory</button>
+      <button class="filter-pill" data-filter="safety">Safety & POSH</button>
+      <button class="filter-pill" data-filter="hr">HR Practices</button>
+      <button class="filter-pill" data-filter="regulatory">Regulatory Updates</button>
+      <span class="filter-count" id="articleCount">Showing 21 articles</span>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- FEATURED CATEGORIES -->
-  <section class="section section-light" id="categories">
-    <div class="wrap">
-      <h2 class="section-title">Explore by Category</h2>
-      <div class="cat-grid">
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg></div>
-          <div class="cat-info"><h3>Labour Laws</h3><p>42 Articles</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20V8l8-4 8 4v12M9 20v-6h6v6M8 12h8"/></svg></div>
-          <div class="cat-info"><h3>Factory Compliance</h3><p>28 Articles</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M12 12h.01M16 12h.01M8 12h.01"/></svg></div>
-          <div class="cat-info"><h3>Payroll & Statutory</h3><p>35 Articles</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c0 0-4 3-4 8a4 4 0 0 0 8 0c0-5-4-8-4-8z"/><path d="M12 22a8 8 0 0 0 8-8c0-5-4-8-4-8s-4 3-4 8a8 8 0 0 0 8 8z"/></svg></div>
-          <div class="cat-info"><h3>Fire & Safety</h3><p>15 Articles</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div class="cat-info"><h3>POSH</h3><p>19 Articles</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <div class="cat-info"><h3>HR Compliance</h3><p>51 Articles</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/></svg></div>
-          <div class="cat-info"><h3>Digital Compliance</h3><p>12 Articles</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-          <div class="cat-info"><h3>Government Updates</h3><p>84 Updates</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-          <div class="cat-info"><h3>Industry Guides</h3><p>22 Guides</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-          <div class="cat-info"><h3>Downloads</h3><p>18 Templates</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div class="cat-info"><h3>Case Studies</h3><p>9 Articles</p></div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-          <div class="cat-info"><h3>Compliance Calendar</h3><p>12 Months</p></div>
-        </a>
+<!-- ─── FEATURED ARTICLE ─── -->
+<section class="featured-sec">
+  <div class="wrap">
+    <a href="/article" class="featured-grid" data-cat="compliance">
+      <div class="featured-img">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200" alt="Labour Codes" loading="lazy"/>
       </div>
-    </div>
-  </section>
-
-  <!-- FEATURED ARTICLE -->
-  <section class="section" id="resources">
-    <div class="wrap">
-      <article class="featured-article">
-        <div class="fa-img-wrap">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200" alt="Documents" class="fa-img" loading="lazy"/>
+      <div class="featured-content">
+        <span class="featured-tag">Featured · Compliance</span>
+        <h2>Navigating the New Labour Codes: What Every Employer Must Know in 2026</h2>
+        <p>A comprehensive breakdown of how the impending Labour Code implementation will affect your payroll structure, basic wage calculations, PF contributions, and overall compliance obligations for employers across all sectors.</p>
+        <div class="featured-meta">
+          <span>Czar Research Team</span>
+          <span>·</span>
+          <span>15 min read</span>
+          <span>·</span>
+          <span>Oct 2024</span>
         </div>
-        <div class="fa-content">
-          <div class="fa-meta">
-            <span class="fa-badge">Labour Codes</span>
-            <span class="fa-verified"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Expert Verified</span>
-            <span class="fa-date">Oct 15, 2024 • 5 Min Read</span>
-          </div>
-          <h2>Navigating the New Wage Codes: What Employers Need to Know</h2>
-          <p class="fa-summary">A comprehensive breakdown of how the impending Labour Code implementation will affect your payroll structure, basic wage calculations, PF contributions, and overall compliance obligations for employers across all sectors.</p>
-          <div class="fa-author">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=100" alt="Rajeev Sharma" loading="lazy"/>
-            <div>
-              <span class="fa-author-name">Rajeev Sharma</span>
-              <span class="fa-author-role">Principal Legal Consultant</span>
-            </div>
-          </div>
-          <a href="/article" class="fa-btn">Read Executive Guide <span>→</span></a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- TRENDING HORIZONTAL -->
-  <section class="section section-light">
-    <div class="wrap">
-      <h2 class="section-title">Trending This Month</h2>
-      <div class="trending-wrap">
-        <a href="/article-fire" class="trend-card">
-          <span class="trend-badge">#1 Popular</span>
-          <h3>The Ultimate Guide to Fire Safety NOC Renewal in India (2026)</h3>
-          <p>Complete compliance checklist for commercial & industrial establishments before the inspector arrives.</p>
-        </a>
-        <a href="/article-posh" class="trend-card" style="background:#0F172A;">
-          <span class="trend-badge">#2 Popular</span>
-          <h3>The Complete Guide to Appointing an External Member under the POSH Act (2026)</h3>
-          <p>Roles, responsibilities & employer compliance for your Internal Committee.</p>
-        </a>
-        <a href="/article-contract" class="trend-card" style="background:#1E293B;">
-          <span class="trend-badge">#3 Popular</span>
-          <h3>Contract Labour Compliance in India (2026)</h3>
-          <p>Complete employer guide to registration, licensing & statutory obligations.</p>
-        </a>
-        <a href="/article-wage" class="trend-card" style="background:#334155;">
-          <span class="trend-badge">#4 Popular</span>
-          <h3>State-wise Minimum Wage Revisions</h3>
-          <p>A complete overview of the VDA (Variable Dearness Allowance) changes across major Indian states for Q4.</p>
-        </a>
+        <span class="read-link">Read the full report <span>→</span></span>
       </div>
+    </a>
+  </div>
+</section>
+
+<!-- ─── ARTICLE LIST ─── -->
+<section class="articles-sec">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Latest Insights</h2>
     </div>
-  </section>
 
-  <!-- LATEST ARTICLES GRID -->
-  <section class="section">
-    <div class="wrap">
-      <h2 class="section-title">Latest Knowledge Articles</h2>
-      <div class="articles-grid">
+    <div class="article-list" id="articleList">
 
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600" alt="REGULATORY" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">REGULATORY</span><span>4 MIN READ</span></div>
-            <h3>Understanding the Shops & Establishments Act Across States</h3>
-            <p>The Shops & Establishments Act varies significantly from state to state. This comparative analysis covers registration requirements, working hours, leave entitlements, and closure rules across major Indian states to help multi-location businesses stay compliant everywhere they operate.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-shops" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-  
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600" alt="HR PRACTICES" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">HR PRACTICES</span><span>5 MIN READ</span></div>
-            <h3>Building an Effective Grievance Redressal Mechanism</h3>
-            <p>A robust internal grievance mechanism is not just a compliance requirement — it's a retention tool. Learn how to design, implement, and monitor a grievance redressal system that meets legal requirements under the Industrial Disputes Act while fostering trust and transparency in your organization.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-grievance" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-  
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="DIGITAL" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">DIGITAL</span><span>6 MIN READ</span></div>
-            <h3>Digital Compliance: Moving Beyond Paper-Based Record Keeping</h3>
-            <p>The shift to digital compliance is accelerating with government portals mandating online filings. Discover how to transition your compliance workflows from paper registers to digital systems, the legal validity of electronic records, and which states now accept digital maintenance of statutory registers.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-digital" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-  
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1554224154-26032ffc0dff?auto=format&fit=crop&q=80&w=600" alt="PAYROLL & STATUTORY COMPLIANCE" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">PAYROLL & STATUTORY COMPLIANCE</span><span>14 MIN READ</span></div>
-            <h3>EPF Compliance for Employers in India (2026): Complete Registration, Contribution & Filing Guide</h3>
-            <p>Learn how to manage EPF registration, contributions, filings, inspections, and employer obligations with this comprehensive 2026 compliance guide.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-pf" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600" alt="PAYROLL & STATUTORY COMPLIANCE" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">PAYROLL & STATUTORY COMPLIANCE</span><span>13 MIN READ</span></div>
-            <h3>ESIC Compliance for Employers in India (2026): Complete Registration, Contribution & Inspection Guide</h3>
-            <p>Learn how to manage ESIC registration, employee enrolment, contributions, inspections, documentation, and employer responsibilities with this comprehensive 2026 guide.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-esic" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600" alt="LABOUR LAWS" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">LABOUR LAWS</span><span>15 MIN READ</span></div>
-            <h3>Labour Department Inspection Checklist (2026): Complete Employer Guide to Preparing for Compliance Inspections</h3>
-            <p>Learn how to prepare for Labour Department inspections with this comprehensive employer guide covering documentation, statutory compliance, workplace safety, inspections, and best practices.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-inspection" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=600" alt="LABOUR LAWS" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">LABOUR LAWS</span><span>15 MIN READ</span></div>
-            <h3>The Payment of Gratuity Act Explained (2026): Complete Employer Guide to Eligibility, Calculation & Compliance</h3>
-            <p>Learn about gratuity eligibility, employer obligations, calculation principles, documentation, compliance requirements, and common mistakes under the Payment of Gratuity Act.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-gratuity" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-  
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=600" alt="LABOUR LAWS" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">LABOUR LAWS</span><span>14 MIN READ</span></div>
-            <h3>Contract Labour Compliance in India (2026): Complete Employer Guide to Registration, Licensing & Statutory Obligations</h3>
-            <p>Understand the legal framework governing contract labour, employer responsibilities, contractor obligations, and practical compliance strategies for your business.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-contract" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-  
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1504917595217-d4bffc6481cb?auto=format&fit=crop&q=80&w=600" alt="FACTORY COMPLIANCE" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">FACTORY COMPLIANCE</span><span>13 MIN READ</span></div>
-            <h3>Factory Licence Renewal in India (2026): Complete Compliance Guide for Employers</h3>
-            <p>Renewing your factory license involves navigating multiple departments and meeting stringent safety standards. Our comprehensive guide walks you through the entire process — from document preparation and inspection readiness to dealing with state-specific variations and timeline management.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-factory" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-  
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="COMPLIANCE" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">COMPLIANCE</span><span>5 MIN READ</span></div>
-            <h3>Navigating the New Wage Codes: What Employers Need to Know</h3>
-            <p>A comprehensive breakdown of how the impending Labour Code implementation will affect your payroll structure, basic wage calculations, PF contributions, and overall compliance obligations for employers across all sectors.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-  
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1585834898734-7d501b1b4279?auto=format&fit=crop&q=80&w=600" alt="SAFETY" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">SAFETY</span><span>3 MIN READ</span></div>
-            <h3>The Ultimate Checklist for Fire Safety NOC Renewals in 2024</h3>
-            <p>Ensure your commercial premises meet the latest National Building Code requirements before the inspector arrives. We break down all mandatory fire safety measures, documentation requirements, and common reasons for NOC rejection.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-fire" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-  
-        <article class="art-card">
-          <div class="art-img-wrap"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=600" alt="POSH COMPLIANCE" loading="lazy"/></div>
-          <div class="art-body">
-            <div class="art-meta"><span class="art-cat">POSH COMPLIANCE</span><span>11 MIN READ</span></div>
-            <h3>The Complete Guide to Appointing an External Member under the POSH Act (2026)</h3>
-            <p>A comprehensive guide on roles, responsibilities, and employer compliance requirements for selecting an unbiased external representative for your Internal Committee.</p>
-            <div class="art-footer">
-              <div class="art-author"><img src="/logo.png" style="filter:grayscale(1) contrast(2);" alt="Czar" loading="lazy"/><span>Czar Research</span></div>
-              <a href="/article-posh" class="art-read">Read Guide</a>
-            </div>
-          </div>
-        </article>
-        </div>
-    </div>
-  </section>
-
-  <!-- DOWNLOADS & TOOLS + GOVT UPDATES -->
-  <section class="section section-light">
-    <div class="wrap two-col-grid">
-      
-      <div>
-        <h2 class="section-title" style="margin-bottom:32px;">Download Centre & Tools</h2>
-        <div class="dt-list">
-          <a href="#" class="dt-card">
-            <div class="dt-info">
-              <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-              <div class="dt-text"><h4>2024 HR Compliance Audit Checklist</h4><p>PDF Format • 2.4 MB</p></div>
-            </div>
-            <div class="dt-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
-          </a>
-          <a href="#" class="dt-card">
-            <div class="dt-info">
-              <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-              <div class="dt-text"><h4>Statutory Compliance Calendar (All States)</h4><p>Excel Template • 1.1 MB</p></div>
-            </div>
-            <div class="dt-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
-          </a>
-          <a href="#" class="dt-card">
-            <div class="dt-info">
-              <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-              <div class="dt-text"><h4>PF & Gratuity Calculator Tool</h4><p>Interactive Web Tool</p></div>
-            </div>
-            <div class="dt-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
-          </a>
-          <a href="#" class="dt-card">
-            <div class="dt-info">
-              <div class="dt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-              <div class="dt-text"><h4>POSH Annual Return Format</h4><p>Word Document • 0.5 MB</p></div>
-            </div>
-            <div class="dt-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <h2 class="section-title" style="margin-bottom:32px;">Government Updates</h2>
-        <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <span class="tl-date">October 12, 2024</span>
-            <div class="tl-content">
-              <h3>EPFO Circular on Higher Pension</h3>
-              <p>The EPFO has released a new FAQ document clarifying the computation method for higher pension applications filed under the Supreme Court mandate.</p>
-              <a href="/article-epfo" class="tl-link">Read Notification <span>→</span></a>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <span class="tl-date">September 28, 2024</span>
-            <div class="tl-content">
-              <h3>Karnataka S&E Minimum Wages Revised</h3>
-              <p>The Labour Department of Karnataka has notified the revised VDA applicable for shop and commercial establishments from Oct 1 to Mar 31.</p>
-              <a href="/article-factory" class="tl-link">Read Notification <span>→</span></a>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <span class="tl-date">September 15, 2024</span>
-            <div class="tl-content">
-              <h3>ESIC Extension of E-Pehchan Validity</h3>
-              <p>ESIC extends the validity of temporary E-Pehchan cards to facilitate easier access to medical benefits for newly insured persons.</p>
-              <a href="/article-shift" class="tl-link">Read Notification <span>→</span></a>
-            </div>
+      <a href="/article-contract" class="article-row" data-cat="labour">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=600" alt="Contract Labour" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Labour Laws</span>
+          <h3>Contract Labour Compliance in India: Complete Employer Guide to Registration, Licensing & Statutory Obligations</h3>
+          <p>Understand the legal framework governing contract labour, employer responsibilities, contractor obligations, and practical compliance strategies.</p>
+          <div class="article-bottom">
+            <span class="article-type">Guide</span>
+            <span>14 min read</span>
+            <span>·</span>
+            <span>2026</span>
           </div>
         </div>
-      </div>
+      </a>
 
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="section">
-    <div class="wrap">
-      <div class="newsletter">
-        <div class="nl-inner">
-          <h2>Never Miss a Compliance Update</h2>
-          <p>Join over 5,000 HR heads, CFOs, and business owners who rely on Czar Consultancy's weekly alerts for critical labour law changes and compliance deadlines.</p>
-          <form class="nl-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
-            <input type="email" placeholder="Enter your business email address" required aria-label="Email address"/>
-            <button type="submit">Subscribe Now</button>
-          </form>
+      <a href="/article-pf" class="article-row" data-cat="payroll">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1554224154-26032ffc0dff?auto=format&fit=crop&q=80&w=600" alt="EPF Compliance" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Payroll & Statutory</span>
+          <h3>EPF Compliance for Employers in India: Complete Registration, Contribution & Filing Guide</h3>
+          <p>Learn how to manage EPF registration, contributions, filings, inspections, and employer obligations with this comprehensive compliance guide.</p>
+          <div class="article-bottom">
+            <span class="article-type">Guide</span>
+            <span>14 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
         </div>
-      </div>
+      </a>
+
+      <a href="/article-esic" class="article-row" data-cat="payroll">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600" alt="ESIC Compliance" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Payroll & Statutory</span>
+          <h3>ESIC Compliance for Employers in India: Complete Registration, Contribution & Inspection Guide</h3>
+          <p>Learn how to manage ESIC registration, employee enrolment, contributions, inspections, documentation, and employer responsibilities.</p>
+          <div class="article-bottom">
+            <span class="article-type">Guide</span>
+            <span>13 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-posh" class="article-row" data-cat="safety">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=600" alt="POSH Act" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Safety & POSH</span>
+          <h3>The Complete Guide to Appointing an External Member under the POSH Act</h3>
+          <p>Roles, responsibilities, and employer compliance requirements for selecting an unbiased external representative for your Internal Committee.</p>
+          <div class="article-bottom">
+            <span class="article-type">Guide</span>
+            <span>11 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-fire" class="article-row" data-cat="safety">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1585834898734-7d501b1b4279?auto=format&fit=crop&q=80&w=600" alt="Fire Safety" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Safety & POSH</span>
+          <h3>The Ultimate Guide to Fire Safety NOC Renewal in India</h3>
+          <p>Complete compliance checklist for commercial and industrial establishments. Mandatory fire safety measures, documentation requirements, and common reasons for NOC rejection.</p>
+          <div class="article-bottom">
+            <span class="article-type">Guide</span>
+            <span>12 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-factory" class="article-row" data-cat="compliance">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1504917595217-d4bffc6481cb?auto=format&fit=crop&q=80&w=600" alt="Factory Compliance" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Compliance</span>
+          <h3>Factory Licence Renewal in India: Complete Compliance Guide for Employers</h3>
+          <p>Navigate multiple departments and meet stringent safety standards. From document preparation and inspection readiness to state-specific variations.</p>
+          <div class="article-bottom">
+            <span class="article-type">Guide</span>
+            <span>13 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-inspection" class="article-row" data-cat="labour">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600" alt="Inspection" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Labour Laws</span>
+          <h3>Labour Department Inspection Checklist: Complete Employer Guide to Preparing for Compliance Inspections</h3>
+          <p>Comprehensive employer guide covering documentation, statutory compliance, workplace safety, inspections, and best practices for audit readiness.</p>
+          <div class="article-bottom">
+            <span class="article-type">Guide</span>
+            <span>15 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-gratuity" class="article-row" data-cat="labour">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=600" alt="Gratuity" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Labour Laws</span>
+          <h3>The Payment of Gratuity Act Explained: Complete Employer Guide to Eligibility, Calculation & Compliance</h3>
+          <p>Gratuity eligibility, employer obligations, calculation principles, documentation, and common mistakes under the Payment of Gratuity Act.</p>
+          <div class="article-bottom">
+            <span class="article-type">Guide</span>
+            <span>15 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-shops" class="article-row" data-cat="regulatory">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" alt="Shops & Establishments" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Regulatory Updates</span>
+          <h3>Understanding the Shops & Establishments Act Across States</h3>
+          <p>Comparative analysis covering registration requirements, working hours, leave entitlements, and closure rules across major Indian states.</p>
+          <div class="article-bottom">
+            <span class="article-type">Brief</span>
+            <span>4 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-grievance" class="article-row" data-cat="hr">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600" alt="Grievance Redressal" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">HR Practices</span>
+          <h3>Building an Effective Grievance Redressal Mechanism</h3>
+          <p>Design, implement, and monitor a grievance redressal system that meets legal requirements under the Industrial Disputes Act while fostering trust.</p>
+          <div class="article-bottom">
+            <span class="article-type">Brief</span>
+            <span>5 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-digital" class="article-row" data-cat="compliance">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Digital Compliance" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Compliance</span>
+          <h3>Digital Compliance: Moving Beyond Paper-Based Record Keeping</h3>
+          <p>Transition your compliance workflows from paper registers to digital systems. Legal validity of electronic records and state-by-state acceptance.</p>
+          <div class="article-bottom">
+            <span class="article-type">Brief</span>
+            <span>6 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-epfo" class="article-row" data-cat="regulatory">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=600" alt="EPFO Circular" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Regulatory Updates</span>
+          <h3>EPFO Circular on Higher Pension: What It Means for Employers</h3>
+          <p>The EPFO's new FAQ clarifying the computation method for higher pension applications filed under the Supreme Court mandate, and its impact on employers.</p>
+          <div class="article-bottom">
+            <span class="article-type">Brief</span>
+            <span>4 min read</span>
+            <span>·</span>
+            <span>2024</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-shift" class="article-row" data-cat="hr">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=600" alt="Shift Management" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">HR Practices</span>
+          <h3>Shift Management and Overtime Compliance Under Indian Labour Laws</h3>
+          <p>Understanding working hour regulations, shift scheduling obligations, overtime calculations, and rest day requirements across major Indian states.</p>
+          <div class="article-bottom">
+            <span class="article-type">Brief</span>
+            <span>5 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-wage" class="article-row" data-cat="regulatory">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=600" alt="Minimum Wages" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Regulatory Updates</span>
+          <h3>State-wise Minimum Wage Revisions: VDA Changes Across India</h3>
+          <p>A comprehensive overview of the Variable Dearness Allowance changes across major Indian states and how they affect employer wage obligations.</p>
+          <div class="article-bottom">
+            <span class="article-type">Brief</span>
+            <span>5 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ─── NEW ARTICLES (ADDED BY CZAR) ─── -->
+
+      <a href="/article-contract" class="article-row" data-cat="labour">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=600" alt="Labour Code 2026" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Labour Laws</span>
+          <h3>How the Four Labour Codes Will Transform Indian Employment Law</h3>
+          <p>The proposed consolidation of 29 central labour laws into four codes — on Wages, Industrial Relations, Social Security, and Occupational Safety — represents the biggest overhaul in decades. Here's what it means for your business.</p>
+          <div class="article-bottom">
+            <span class="article-type">Analysis</span>
+            <span>10 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-posh" class="article-row" data-cat="safety">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600" alt="POSH Training" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Safety & POSH</span>
+          <h3>Designing an Effective POSH Training Programme: From Compliance to Culture Change</h3>
+          <p>Beyond just ticking the compliance box — how forward-thinking organisations are using POSH training to drive genuine cultural change, reduce incidents, and build more inclusive workplaces.</p>
+          <div class="article-bottom">
+            <span class="article-type">Report</span>
+            <span>8 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-esic" class="article-row" data-cat="payroll">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=600" alt="Payroll Audit" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Payroll & Statutory</span>
+          <h3>The CFO's Guide to Payroll Compliance Audits: Avoiding Costly Penalties</h3>
+          <p>A practical framework for finance leaders to proactively audit their payroll systems for PF, ESIC, professional tax, and gratuity compliance before the authorities do.</p>
+          <div class="article-bottom">
+            <span class="article-type">Report</span>
+            <span>9 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-factory" class="article-row" data-cat="compliance">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600" alt="Industry 4.0" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Compliance</span>
+          <h3>Industry 4.0 and Factory Compliance: Adapting Legacy Regulations to Modern Manufacturing</h3>
+          <p>As Indian factories adopt automation, IoT, and AI-driven processes, the Factories Act 1948 framework needs reinterpretation. This analysis explores the intersection of technology and compliance.</p>
+          <div class="article-bottom">
+            <span class="article-type">Analysis</span>
+            <span>7 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-gratuity" class="article-row" data-cat="hr">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" alt="Employee Retention" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">HR Practices</span>
+          <h3>Employee Retention Through Compliance: Why Labour Law Adherence Drives Engagement</h3>
+          <p>New research shows that companies with robust compliance frameworks see 23% lower attrition. Explore the link between statutory compliance and employee satisfaction.</p>
+          <div class="article-bottom">
+            <span class="article-type">Report</span>
+            <span>6 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-inspection" class="article-row" data-cat="regulatory">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=600" alt="Compliance Technology" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Regulatory Updates</span>
+          <h3>The Rise of RegTech in Indian Labour Compliance: 2026 Market Overview</h3>
+          <p>Regulatory technology is reshaping how businesses manage compliance. From AI-powered audit tools to real-time regulatory tracking, here's where the market is heading.</p>
+          <div class="article-bottom">
+            <span class="article-type">Analysis</span>
+            <span>7 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/article-wage" class="article-row" data-cat="labour">
+        <div class="article-thumb"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600" alt="Gig Economy" loading="lazy"/></div>
+        <div class="article-info">
+          <span class="article-tag">Labour Laws</span>
+          <h3>Gig Workers and Platform Economy: India's Evolving Labour Law Framework</h3>
+          <p>With the Code on Social Security 2020 introducing provisions for gig and platform workers, India is charting new territory. What employers in the platform economy must prepare for.</p>
+          <div class="article-bottom">
+            <span class="article-type">Analysis</span>
+            <span>8 min read</span>
+            <span>·</span>
+            <span>2026</span>
+          </div>
+        </div>
+      </a>
+
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- ─── NEWSLETTER ─── -->
+<section class="newsletter-sec">
+  <div class="wrap">
+    <div class="newsletter-inner">
+      <span class="eyebrow">Stay Informed</span>
+      <h2>Never miss a compliance update</h2>
+      <p>Join over 5,000 HR heads, CFOs, and business owners who rely on our weekly alerts for critical labour law changes and compliance deadlines.</p>
+      <form class="nl-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+        <input type="email" placeholder="Enter your business email" required aria-label="Email address"/>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 </main>
 
 <footer class="footer">
-  <div class="footer-top">
+  <div class="wrap footer-top">
     <div>
       <img src="/logo.png" alt="Czar Consultancy" style="height:40px;margin-bottom:16px;filter:brightness(0) invert(1);opacity:0.8;" loading="lazy"/>
       <p style="line-height:1.8;max-width:320px;">India's leading specialized labour law and compliance advisory firm, serving over 200 enterprises across sectors.</p>
@@ -719,7 +650,7 @@ button { cursor: pointer; border: none; background: none; }
     </div>
     <div class="f-col">
       <h4>Resources</h4>
-      <ul><li><a href="/services">Services</a></li><li><a href="/insights">Knowledge Centre</a></li><li><a href="/contact">Contact Us</a></li></ul>
+      <ul><li><a href="/services">Services</a></li><li><a href="/insights">Insights</a></li><li><a href="/contact">Contact Us</a></li></ul>
     </div>
     <div class="f-col">
       <h4>Contact</h4>
@@ -729,7 +660,7 @@ button { cursor: pointer; border: none; background: none; }
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="wrap footer-bottom">
     <span>© 2024 Czar Consultancy. All rights reserved.</span>
     <span style="display:flex;gap:24px;"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></span>
   </div>
@@ -754,23 +685,59 @@ window.addEventListener('scroll', () => {
   progressBar.style.width = ((h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100) + '%';
 });
 
+// Filter System
+const pills = document.querySelectorAll('.filter-pill');
+const rows = document.querySelectorAll('.article-row');
+const featured = document.querySelector('.featured-grid');
+const countEl = document.getElementById('articleCount');
+
+pills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    pills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    const filter = pill.dataset.filter;
+    let visible = 0;
+
+    rows.forEach(row => {
+      if (filter === 'all' || row.dataset.cat === filter) {
+        row.style.display = '';
+        visible++;
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    // Show/hide featured
+    if (featured) {
+      if (filter === 'all' || featured.dataset.cat === filter) {
+        featured.closest('.featured-sec').style.display = '';
+        visible++;
+      } else {
+        featured.closest('.featured-sec').style.display = 'none';
+      }
+    }
+
+    countEl.textContent = `Showing ${visible} article${visible !== 1 ? 's' : ''}`;
+  });
+});
+
 // Lazy Load Image Fade In
 document.addEventListener("DOMContentLoaded", function() {
   var lazyImages = [].slice.call(document.querySelectorAll("img[loading='lazy']"));
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+    let lazyImageObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          lazyImage.style.opacity = 1;
-          lazyImageObserver.unobserve(lazyImage);
+          let img = entry.target;
+          img.style.opacity = 1;
+          lazyImageObserver.unobserve(img);
         }
       });
     });
-    lazyImages.forEach(function(lazyImage) {
-      lazyImage.style.opacity = 0;
-      lazyImage.style.transition = "opacity 0.5s";
-      lazyImageObserver.observe(lazyImage);
+    lazyImages.forEach(function(img) {
+      img.style.opacity = 0;
+      img.style.transition = "opacity 0.5s";
+      lazyImageObserver.observe(img);
     });
   }
 });
