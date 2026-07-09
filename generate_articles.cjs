@@ -102,17 +102,17 @@ articles.forEach(article => {
   // We can just globally replace the hrefs for these specific blocks.
   
   // For trending cards:
-  const trendingRegex = new RegExp(`<a href="/article.html"( class="trend-card"[^>]*>[\\s\\S]*?<h3>${article.title.replace(/[.*+?^$\/{}()|[\\]\\\\]/g, '\\$&')}</h3>)`, 'g');
+  const trendingRegex = new RegExp(`<a href="/article"( class="trend-card"[^>]*>[\\s\\S]*?<h3>${article.title.replace(/[.*+?^$\/{}()|[\\]\\\\]/g, '\\$&')}</h3>)`, 'g');
   insightsPage = insightsPage.replace(trendingRegex, `<a href="/${filename}"$1`);
   
   // For latest cards:
-  // The structure is an article tag with an inner anchor. Wait, in latest articles, the link is <a href="/article.html" class="art-read">Read Guide</a>
+  // The structure is an article tag with an inner anchor. Wait, in latest articles, the link is <a href="/article" class="art-read">Read Guide</a>
   // So we need to match the block containing the title, and change the href inside it.
-  const latestBlockRegex = new RegExp(`(<article class="art-card">[\\s\\S]*?<h3>${article.title.replace(/[.*+?^$\/{}()|[\\]\\\\]/g, '\\$&')}<\/h3>[\\s\\S]*?<a href=")/article.html(" class="art-read">)`, 'g');
+  const latestBlockRegex = new RegExp(`(<article class="art-card">[\\s\\S]*?<h3>${article.title.replace(/[.*+?^$\/{}()|[\\]\\\\]/g, '\\$&')}<\/h3>[\\s\\S]*?<a href=")/article(" class="art-read">)`, 'g');
   insightsPage = insightsPage.replace(latestBlockRegex, `$1/${filename}$2`);
   
   // Same for timeline govt updates (if any matched)
-  const timelineRegex = new RegExp(`(<h3>${article.title.replace(/[.*+?^$\/{}()|[\\]\\\\]/g, '\\$&')}<\/h3>[\\s\\S]*?<a href=")/article.html(" class="tl-link">)`, 'g');
+  const timelineRegex = new RegExp(`(<h3>${article.title.replace(/[.*+?^$\/{}()|[\\]\\\\]/g, '\\$&')}<\/h3>[\\s\\S]*?<a href=")/article(" class="tl-link">)`, 'g');
   insightsPage = insightsPage.replace(timelineRegex, `$1/${filename}$2`);
 });
 
