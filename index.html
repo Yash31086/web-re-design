@@ -557,13 +557,22 @@ button{font-family:'Inter',sans-serif;cursor:pointer;border:none;background:none
   .nav{display:none}
   .logo-tagline{display:none}
   .wrap{padding:0 20px}
-  .hero-slider-section { height: 75vh; min-height: 500px; }
-  .slide-title { font-size: 36px; }
-  .services-grid { grid-template-columns: 1fr; }
+  .hero-slider-section { height: 75vh; min-height: 500px; margin-top: 65px; }
+  .slide-title { font-size: 36px; margin-bottom: 16px; }
+  .slide-desc { font-size: 16px; margin-bottom: 24px; }
+  .services-sec, .impact-sec, .insights-sec, .cta-sec { padding: 60px 0; }
+  .services-grid { grid-template-columns: 1fr; gap: 32px; }
   .impact-stats { grid-template-columns: 1fr; gap: 32px; }
-  .insights-grid { grid-template-columns: 1fr; }
-  .client-logos { flex-wrap: wrap; gap: 24px; }
-  .footer-top{grid-template-columns:1fr;gap:36px}
+  .impact-quote { font-size: 24px; }
+  .insights-grid { grid-template-columns: 1fr; gap: 32px; }
+  .client-strip { padding: 40px 0; }
+  .client-strip-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .client-strip-title { font-size: 24px; }
+  .client-logos { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 40px; }
+  .section-header h2 { font-size: 26px; }
+  .cta-sec h2 { font-size: 32px; }
+  .footer-top{grid-template-columns:1fr;gap:36px; padding-bottom: 40px; }
   .footer-bottom{flex-direction:column;gap:16px;text-align:center}
 }
 </style>
