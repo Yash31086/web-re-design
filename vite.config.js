@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import fs from 'fs';
 
@@ -23,7 +22,6 @@ function getHtmlEntries(dir, base = '') {
 const inputs = getHtmlEntries(__dirname);
 
 export default defineConfig({
-  plugins: [react()],
   build: {
     rollupOptions: {
       input: inputs
