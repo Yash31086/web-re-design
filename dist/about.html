@@ -35,23 +35,26 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
 
 /* HEADER */
-.header-fixed{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:1200px;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:100px;box-shadow:0 10px 40px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-between;padding:8px 24px; border:1px solid rgba(255,255,255,0.5)}
-.header-top{display:flex;align-items:center;border:none;padding:0;width:auto}
-.header-top .nav-wrap{justify-content:flex-start;gap:16px;width:auto;padding:0!important}
-.nav-wrap{display:flex;align-items:center;padding:0!important}
-.nav-logo{display:flex;align-items:center;gap:16px;transition:transform 0.3s ease;z-index:2}
-.nav-logo:hover{transform:scale(1.02)}
-.logo-img{height:36px;width:auto}
-.logo-tagline{display:none}
-.header-contact-info{display:none!important}
-.nav{border:none;display:flex;align-items:center;width:auto}
-.nav .nav-wrap{justify-content:flex-end;width:auto}
-.nav-links{display:flex;gap:4px;position:absolute;left:50%;transform:translateX(-50%);z-index:1}
-.nav-links li{height:100%}
-.nav-links a{display:flex;align-items:center;padding:10px 16px;font-size:14.5px;font-weight:500;color:var(--gray);border-radius:100px;transition:all 0.3s ease}
-.nav-links a:hover,.nav-links a.active{color:var(--ink);background:rgba(0,0,0,0.04)}
-.nav-cta{background:#4F46E5!important;color:#fff!important;padding:12px 28px;font-size:14.5px;font-weight:600;margin-left:16px;border-radius:100px;border:none;cursor:pointer;transition:all 0.3s ease;z-index:2;white-space:nowrap}
-.nav-cta:hover{background:#4338CA!important;transform:translateY(-2px);box-shadow:0 10px 20px rgba(79,70,229,0.3)}
+.header-fixed { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+.header-top { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.nav-wrap { display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; gap: 16px; transition: transform 0.3s ease; }
+.nav-logo:hover { transform: scale(1.02); }
+.logo-img { height: 48px; width: auto; }
+.logo-tagline { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); border-left: 1px solid var(--line); padding-left: 16px; }
+.header-contact-info { display: flex; gap: 24px; font-size: 13.5px; font-weight: 600; }
+.hc-link { display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s; }
+.hc-link:hover { color: var(--red); }
+.hc-svg { width: 16px; height: 16px; fill: var(--red); }
+.nav { border-bottom: 1px solid var(--line); }
+.nav-links { display: flex; gap: 0; }
+.nav-links li { height: 100%; }
+.nav-links a { display: flex; align-items: center; padding: 12px 20px; font-size: 13px; font-weight: 600; color: var(--gray); position: relative; transition: color 0.3s ease; }
+.nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 50%; width: 0; height: 3px; background: var(--red); transition: all 0.4s cubic-bezier(0.16,1,0.3,1); transform: translateX(-50%); border-radius: 3px 3px 0 0; }
+.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-cta { background: var(--red) !important; color: #fff !important; padding: 10px 24px; font-size: 13px; font-weight: 600; margin-left: 16px; border-radius: 6px; border: none; cursor: pointer; transition: all 0.3s ease; }
+.nav-cta:hover { background: var(--red-dk) !important; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(198,40,40,0.2); }
 .hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer; background: none; border: none; z-index: 1001; }
 .hamburger span { width: 24px; height: 2px; background: var(--ink); transition: all 0.3s; border-radius: 2px; }
 .mob-nav {
@@ -87,7 +90,7 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
 .mob-nav-close { display: block; position: absolute; top: 20px; right: 20px; font-size: 28px; font-weight: 300; color: var(--gray); padding: 8px; cursor: pointer; background: none; border: none; line-height: 1; }
 
 /* HERO */
-.page-hero { padding: 180px 0 64px; background: #fff; border-bottom: 1px solid var(--line); }
+.page-hero { padding: 160px 0 64px; background: #fff; border-bottom: 1px solid var(--line); }
 .page-hero-inner { max-width: 800px; }
 .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; display: block; }
 .page-hero h1 { font-family: var(--ff-serif); font-size: clamp(42px, 5.5vw, 68px); color: var(--ink); line-height: 1.1; margin-bottom: 24px; font-weight: 400; letter-spacing: -0.02em; }
@@ -202,291 +205,6 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
   .footer-top { grid-template-columns: 1fr; gap: 36px; }
   .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
 }
-
-/* MEGA MENU */
-.nav-has-dropdown { position: static; }
-.mega-menu {
-  position: fixed !important;
-  top: 90px !important;
-  left: 50% !important;
-  width: calc(100% - 40px) !important;
-  max-width: 1200px !important;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-50%) translateY(10px) !important;
-  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
-  padding: 48px 0;
-  z-index: 999;
-  margin: 0 !important;
-}
-.nav-has-dropdown:hover .mega-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0) !important;
-}
-.mega-menu-inner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-.mega-col h4 {
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray);
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 12px;
-}
-.mega-col a {
-  display: block;
-  font-size: 14.5px;
-  font-weight: 500;
-  color: var(--ink);
-  padding: 8px 0;
-  transition: color 0.2s;
-  text-decoration: none;
-}
-.mega-col a:after {
-  display: none !important; /* disable the red underline from header links */
-}
-.mega-col a:hover {
-  color: var(--red);
-}
-
-
-/* DESKTOP SMART SIDEBAR */
-.desktop-hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 8px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  margin-right: 20px;
-}
-.desktop-hamburger span {
-  width: 24px;
-  height: 2px;
-  background: var(--ink);
-  transition: all 0.3s;
-  border-radius: 2px;
-}
-.desktop-hamburger:hover span { background: var(--red); }
-@media (max-width: 900px) {
-  .desktop-hamburger { display: none; }
-}
-
-#desktop-sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 390px;
-  height: 100vh;
-  background: #fff;
-  z-index: 10000;
-  transform: translateX(-100%);
-  transition: transform 0.4s var(--ease);
-  box-shadow: 10px 0 30px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-}
-#desktop-sidebar.open {
-  transform: translateX(0);
-}
-#sidebar-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-#sidebar-overlay.open {
-  opacity: 1;
-  visibility: visible;
-}
-.ds-header {
-  padding: 24px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-}
-.ds-close {
-  font-size: 28px;
-  font-weight: 300;
-  color: var(--gray);
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-}
-.ds-close:hover { color: var(--red); }
-.ds-menu-view {
-  display: none;
-  padding: 32px;
-  flex-direction: column;
-  gap: 16px;
-}
-.ds-menu-view.active {
-  display: flex;
-}
-.ds-back {
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray);
-  cursor: pointer;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.ds-back:hover { color: var(--red); }
-.ds-title {
-  font-family: var(--ff-serif);
-  font-size: 28px;
-  color: var(--ink);
-  margin-bottom: 16px;
-}
-.ds-link {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--ink);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-  transition: color 0.2s;
-  cursor: pointer;
-}
-.ds-link:hover { color: var(--red); }
-.ds-sub-link {
-  font-size: 15px;
-  color: var(--ink);
-  padding: 8px 0;
-  transition: color 0.2s;
-}
-.ds-sub-link:hover { color: var(--red); }
-.ds-divider {
-  height: 1px;
-  background: var(--line);
-  margin: 16px 0;
-}
-.ds-category {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray);
-  margin-top: 16px;
-  margin-bottom: 8px;
-}
-
-/* BAIN CLIENT RESULTS GRID */
-.client-results-sec {
-  padding: 100px 0;
-  background: #f9fafb;
-}
-.client-results-header {
-  margin-bottom: 64px;
-  text-align: left;
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 20px;
-}
-.client-results-header h2 {
-  font-family: var(--ff-serif);
-  font-size: 40px;
-  color: var(--ink);
-  margin-bottom: 8px;
-}
-.client-results-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-@media (max-width: 1024px) { .client-results-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 768px) { .client-results-grid { grid-template-columns: 1fr; } }
-
-.impact-card {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border: 1px solid var(--line);
-  transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1);
-  overflow: hidden;
-  text-decoration: none;
-}
-.impact-card:hover {
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-  transform: translateY(-4px);
-}
-.impact-card-visual {
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border-bottom: 1px solid var(--line);
-  padding: 40px;
-  overflow: hidden;
-}
-.impact-card-visual img {
-  max-width: 100%;
-  max-height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.6;
-  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.6s, opacity 0.6s;
-}
-.impact-card:hover .impact-card-visual img {
-  transform: scale(1.08);
-  filter: grayscale(0%);
-  opacity: 1;
-}
-.impact-card-content {
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  background: #fff;
-  flex-grow: 1;
-}
-.impact-card-tag {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--red);
-}
-.impact-card-title {
-  font-family: var(--ff-serif);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--ink);
-  margin: 0;
-  transition: color 0.3s;
-}
-.impact-card:hover .impact-card-title {
-  color: var(--red);
-}
-
-
 </style>
   <link rel="icon" type="image/png" href="/favicon.png" />
 </head>
@@ -497,8 +215,7 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
 <header class="header-fixed">
   <div class="header-top">
     <div class="wrap nav-wrap">
-      <button class="desktop-hamburger" onclick="openDesktopSidebar()" aria-label="Menu"><span></span><span></span><span></span></button>
-        <a class="nav-logo" href="/">
+      <a class="nav-logo" href="/">
         <img src="/logo.png" alt="Czar Consultancy" class="logo-img"/>
         <span class="logo-tagline">Labour Law & Compliance Specialist</span>
       </a>
@@ -514,57 +231,8 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/about" class="active">About Us</a></li>
-        <li class="nav-has-dropdown">
-            <a href="/services">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <div class="mega-menu">
-              <div class="mega-menu-inner wrap">
-                <div class="mega-col">
-                  <h4>Core Compliance</h4>
-                  <a href="/services/shop">Shops & Establishments</a>
-                  <a href="/services/factory">Factories Act Compliance</a>
-                  <a href="/services/contract">Contract Labour (CLRA)</a>
-                  <a href="/services/bocw">BOCW Act</a>
-                </div>
-                <div class="mega-col">
-                  <h4>Payroll & Social Security</h4>
-                  <a href="/services/payroll">Payroll Processing</a>
-                  <a href="/services/pfesic">PF & ESIC Compliance</a>
-                  <a href="/services/epf">EPF Trust Management</a>
-                </div>
-                <div class="mega-col">
-                  <h4>Advisory & Audits</h4>
-                  <a href="/services/labour">Labour Laws Advisory</a>
-                  <a href="/services/posh">POSH Act Compliance</a>
-                  <a href="/services/fire">Fire NOC & Lifts</a>
-                  <a href="/services/registration">Licenses & Registrations</a>
-                  <a href="/services/recruitment">Recruitment</a>
-                </div>
-              </div>
-            </div>
-          </li>
-        <li class="nav-has-dropdown">
-            <a href="/insights">Insights <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <div class="mega-menu" >
-              <div class="mega-menu-inner wrap" style="grid-template-columns: 1fr 1fr; max-width: 800px; margin: 0 auto;">
-                <div class="mega-col">
-                  <h4>Compliance Articles</h4>
-                  <a href="/article-pf">Understanding PF & ESIC</a>
-                  <a href="/article-posh">POSH Act Guidelines</a>
-                  <a href="/article-gratuity">Gratuity Rules</a>
-                  <a href="/article-wage">Minimum Wages Act</a>
-                  <a href="/article-factory">Factories Act Deep Dive</a>
-                </div>
-                <div class="mega-col">
-                  <h4>Updates & News</h4>
-                  <a href="/article-digital">Digital Compliance</a>
-                  <a href="/article-shift">Shift Operations</a>
-                  <a href="/article-inspection">Preparing for Inspections</a>
-                  <a href="/article-contract">Contract Labour Regulations</a>
-                  <a href="/insights" style="color: var(--red); font-weight: 700; margin-top: 16px;">View All Insights →</a>
-                </div>
-              </div>
-            </div>
-          </li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/insights">Insights</a></li>
         <li><a href="/team">Our Team</a></li>
         <li><a href="/careers">Careers</a></li>
         <li><a href="/contact">Contact</a></li>
@@ -733,17 +401,7 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
   </div>
 </section>
 
-<!-- BAIN CLIENT RESULTS GRID -->
-
-<section class="client-results-callout" style="padding: 80px 0; background: #fff; border-top: 1px solid var(--line);">
-  <div class="wrap" style="text-align: center;">
-    <h2 style="font-family: var(--ff-serif); font-size: 36px; color: var(--ink); margin-bottom: 24px;">Our Client Impact</h2>
-    <p style="color: var(--gray); font-size: 18px; max-width: 600px; margin: 0 auto 32px;">Discover how we help industry leaders achieve seamless compliance and operational excellence.</p>
-    <a href="/client-results.html" class="nav-cta" style="display: inline-block; font-size: 16px; padding: 14px 32px;">View Client Results</a>
-  </div>
-</section>
-
-  
+</main>
 
 <footer class="footer">
   <div class="wrap footer-top">
@@ -751,24 +409,7 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
       <img src="/logo.png" alt="Czar Consultancy" style="height:40px;margin-bottom:16px;filter:brightness(0) invert(1);opacity:0.8;" loading="lazy"/>
       <p style="line-height:1.8;max-width:320px;">India's leading specialized labour law and compliance advisory firm, serving over 200 enterprises across sectors.</p>
     </div>
-    <div class="f-col"><h4>Company</h4><ul><li class="nav-has-dropdown">
-  <a href="/about">About Us <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-  <div class="mega-menu" style="max-width: 600px; margin: 0 auto; left: 0;">
-    <div class="mega-menu-inner wrap" style="grid-template-columns: 1fr 1fr; padding: 0 32px;">
-      <div class="mega-col">
-        <h4>About Czar</h4>
-        <a href="/about">Company Overview</a>
-        <a href="/team">Leadership & Team</a>
-        <a href="/careers">Careers</a>
-      </div>
-      <div class="mega-col">
-        <h4>Our Impact</h4>
-        <a href="/client-results.html">Client Results</a>
-        <a href="/about" style="color: var(--red); font-weight: 700; margin-top: 16px;">View Full Profile →</a>
-      </div>
-    </div>
-  </div>
-</li><li><a href="/team">Leadership</a></li><li><a href="/careers">Careers</a></li></ul></div>
+    <div class="f-col"><h4>Company</h4><ul><li><a href="/about">About Us</a></li><li><a href="/team">Leadership</a></li><li><a href="/careers">Careers</a></li></ul></div>
     <div class="f-col"><h4>Resources</h4><ul><li><a href="/services">Services</a></li><li><a href="/insights">Insights</a></li><li><a href="/contact">Contact Us</a></li></ul></div>
     <div class="f-col"><h4>Contact</h4><ul>
       <li style="display:flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> <a href="mailto:compliance@czarconsultancy.com">compliance@czarconsultancy.com</a></li>
@@ -798,111 +439,5 @@ function toggleMobileNav() {
   document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 </script>
-
-<!-- SMART DESKTOP SIDEBAR -->
-<div id="sidebar-overlay" onclick="closeDesktopSidebar()"></div>
-<div id="desktop-sidebar">
-  <div class="ds-header">
-    <img src="/logo.png" alt="Czar Consultancy" style="height: 32px;">
-    <button class="ds-close" onclick="closeDesktopSidebar()">×</button>
-  </div>
-  
-  <div id="ds-main" class="ds-menu-view">
-    <a href="/" class="ds-link">Home</a>
-    <div class="ds-link" onclick="switchDsView('ds-about')">About Us <span style="color:var(--red);">→</span></div>
-    <div class="ds-link" onclick="switchDsView('ds-services')">Services <span style="color:var(--red);">→</span></div>
-    <div class="ds-link" onclick="switchDsView('ds-insights')">Insights <span style="color:var(--red);">→</span></div>
-    <a href="/careers" class="ds-link">Careers</a>
-    <a href="/contact" class="ds-link">Contact</a>
-  </div>
-
-  
-  <div id="ds-about" class="ds-menu-view">
-    <div class="ds-back" onclick="switchDsView('ds-main')">◀ Main Menu</div>
-    <h2 class="ds-title">About Us</h2>
-    <a href="/about" class="ds-sub-link">Company Overview</a>
-    <a href="/team" class="ds-sub-link">Leadership & Team</a>
-    <a href="/careers" class="ds-sub-link">Careers</a>
-    <div class="ds-divider"></div>
-    <a href="/client-results.html" class="ds-sub-link" style="color:var(--red);">Client Results</a>
-  </div>
-
-  <div id="ds-services" class="ds-menu-view">
-    <div class="ds-back" onclick="switchDsView('ds-main')">◀ Main Menu</div>
-    <h2 class="ds-title">Services</h2>
-    
-    <div class="ds-category">Core Compliance</div>
-    <a href="/services/shop" class="ds-sub-link">Shops & Establishments</a>
-    <a href="/services/factory" class="ds-sub-link">Factories Act Compliance</a>
-    <a href="/services/contract" class="ds-sub-link">Contract Labour (CLRA)</a>
-    <a href="/services/bocw" class="ds-sub-link">BOCW Act</a>
-    
-    <div class="ds-category">Payroll & Social Security</div>
-    <a href="/services/payroll" class="ds-sub-link">Payroll Processing</a>
-    <a href="/services/pfesic" class="ds-sub-link">PF & ESIC Compliance</a>
-    <a href="/services/epf" class="ds-sub-link">EPF Trust Management</a>
-
-    <div class="ds-category">Advisory & Audits</div>
-    <a href="/services/labour" class="ds-sub-link">Labour Laws Advisory</a>
-    <a href="/services/posh" class="ds-sub-link">POSH Act Compliance</a>
-    <a href="/services/fire" class="ds-sub-link">Fire NOC & Lifts</a>
-    <a href="/services/registration" class="ds-sub-link">Licenses & Registrations</a>
-    <a href="/services/recruitment" class="ds-sub-link">Recruitment</a>
-  </div>
-
-  <div id="ds-insights" class="ds-menu-view">
-    <div class="ds-back" onclick="switchDsView('ds-main')">◀ Main Menu</div>
-    <h2 class="ds-title">Insights</h2>
-    <a href="/article-pf" class="ds-sub-link">Understanding PF & ESIC</a>
-    <a href="/article-posh" class="ds-sub-link">POSH Act Guidelines</a>
-    <a href="/article-gratuity" class="ds-sub-link">Gratuity Rules</a>
-    <a href="/article-wage" class="ds-sub-link">Minimum Wages Act</a>
-    <a href="/article-factory" class="ds-sub-link">Factories Act Deep Dive</a>
-    <a href="/article-digital" class="ds-sub-link">Digital Compliance</a>
-    <a href="/article-shift" class="ds-sub-link">Shift Operations</a>
-    <a href="/article-inspection" class="ds-sub-link">Preparing for Inspections</a>
-    <a href="/article-contract" class="ds-sub-link">Contract Labour Regulations</a>
-    <a href="/insights" class="ds-link" style="color:var(--red); font-size:15px; margin-top:20px;">View All Insights →</a>
-  </div>
-</div>
-
-<script>
-function openDesktopSidebar() {
-  const btn = document.querySelector('.desktop-hamburger');
-  if(btn) {
-    btn.style.transition = 'none';
-    btn.style.transform = 'rotate(0deg)';
-    void btn.offsetWidth;
-    btn.style.transition = 'transform 0.6s ease-out';
-    btn.style.transform = 'rotate(360deg)';
-  }
-
-  const sidebar = document.getElementById('desktop-sidebar');
-  const overlay = document.getElementById('sidebar-overlay');
-  
-  // Context-aware logic
-  const path = window.location.pathname;
-  if (path.includes('/services')) {
-    switchDsView('ds-services');
-  } else if (path.includes('/article') || path.includes('/insight')) {
-    switchDsView('ds-insights');
-  } else {
-    switchDsView('ds-main');
-  }
-  
-  sidebar.classList.add('open');
-  overlay.classList.add('open');
-}
-
-function closeDesktopSidebar() {
-  document.getElementById('desktop-sidebar').classList.remove('open');
-  document.getElementById('sidebar-overlay').classList.remove('open');
-}
-
-function switchDsView(viewId) {
-  document.querySelectorAll('.ds-menu-view').forEach(v => v.classList.remove('active'));
-  document.getElementById(viewId).classList.add('active');
-}
-</script>
-\n</body>
+</body>
 </html>

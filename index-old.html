@@ -14,29 +14,27 @@
 /* MEGA MENU */
 .nav-has-dropdown { position: static; }
 .mega-menu {
-  position: fixed !important;
-  top: 90px !important;
-  left: 50% !important;
-  width: calc(100% - 40px) !important;
-  max-width: 1200px !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--line);
-  border-radius: 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-50%) translateY(10px) !important;
+  transform: translateY(10px);
   transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
   padding: 48px 0;
   z-index: 999;
-  margin: 0 !important;
 }
 .nav-has-dropdown:hover .mega-menu {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0) !important;
+  transform: translateY(0);
 }
 .mega-menu-inner {
   display: grid;
@@ -317,17 +315,5 @@ function switchDsView(viewId) {
   document.getElementById(viewId).classList.add('active');
 }
 </script>
-
-<script>
-  function toggleMobileNav() {
-    const mobNav = document.getElementById('mobileNav');
-    const hamburger = document.getElementById('mobileMenuButton');
-    if(mobNav) {
-      mobNav.classList.toggle('open');
-      if(hamburger) hamburger.classList.toggle('open');
-    }
-  }
-</script>
-
-</body>
+\n</body>
 </html>
