@@ -124,5 +124,17 @@ function switchDsView(viewId) {
   document.getElementById(viewId).classList.add('active');
 }
 </script>
-\n</body>
+
+<script>
+  function toggleMobileNav() {
+    const mobNav = document.getElementById('mobileNav');
+    const hamburger = document.getElementById('mobileMenuButton');
+    if(mobNav) {
+      mobNav.classList.toggle('open');
+      if(hamburger) hamburger.classList.toggle('open');
+    }
+  }
+</script>
+
+</body>
 </html>
