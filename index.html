@@ -971,8 +971,9 @@ button{font-family:'Inter',sans-serif;cursor:pointer;border:none;background:none
   </nav>
 </header>
 
+<div id="mob-nav-overlay" onclick="toggleMobileNav()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:9998;"></div>
 <div class="mob-nav" id="mobileNav" aria-hidden="true">
-  <button class="mob-nav-close" type="button" onclick="toggleMobileNav()">✕</button>
+  <button class="mob-nav-close" type="button" onclick="toggleMobileNav()">&#x2715;</button>
   <a href="/">Home</a><a href="/about">About Us</a><a href="/services">Services</a>
   <a href="/insights">Insights</a><a href="/team">Our Team</a><a href="/careers">Careers</a>
   <a href="/contact">Contact</a>
@@ -1153,24 +1154,15 @@ button{font-family:'Inter',sans-serif;cursor:pointer;border:none;background:none
 // Mobile Nav
 function toggleMobileNav(){
   const nav = document.getElementById('mobileNav');
+  const overlay = document.getElementById('mob-nav-overlay');
   const btn = document.getElementById('mobileMenuButton');
   if(!nav) return;
   const o = nav.classList.toggle('open');
   nav.setAttribute('aria-hidden', String(!o));
   if(btn) btn.setAttribute('aria-expanded', String(o));
+  if(overlay) overlay.style.display = o ? 'block' : 'none';
   document.body.style.overflow = o ? 'hidden' : '';
 }
-
-
-  });
-});
-
-function resetInterval() {
-  clearInterval(slideInterval);
-  slideInterval = setInterval(nextSlide, 7000);
-}
-
-resetInterval();
 </script>
 
 <!-- SMART DESKTOP SIDEBAR -->
