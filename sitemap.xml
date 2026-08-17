@@ -37,20 +37,27 @@
   </url>
 
   <!-- Service detail pages -->
-  <url><loc>https://www.czarconsultancy.com/services-registration</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-pfesic</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-labour</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-payroll</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-shop</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-contract</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-epf</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-posh</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-factory</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-bocw</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-fire</loc></url>
-  <url><loc>https://www.czarconsultancy.com/services-recruitment</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/registration</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/pfesic</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/labour</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/payroll</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/shop</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/contract</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/epf</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/posh</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/factory</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/bocw</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/fire</loc></url>
+  <url><loc>https://www.czarconsultancy.com/services/recruitment</loc></url>
 
-  <!-- Office pages -->
-  <url><loc>https://www.czarconsultancy.com/gurugram</loc></url>
-  <url><loc>https://www.czarconsultancy.com/new-delhi</loc></url>
+  <!-- Article pages -->
+  <url><loc>https://www.czarconsultancy.com/article-pf</loc></url>
+  <url><loc>https://www.czarconsultancy.com/article-posh</loc></url>
+  <url><loc>https://www.czarconsultancy.com/article-gratuity</loc></url>
+  <url><loc>https://www.czarconsultancy.com/article-wage</loc></url>
+  <url><loc>https://www.czarconsultancy.com/article-factory</loc></url>
+  <url><loc>https://www.czarconsultancy.com/article-digital</loc></url>
+  <url><loc>https://www.czarconsultancy.com/article-shift</loc></url>
+  <url><loc>https://www.czarconsultancy.com/article-inspection</loc></url>
+  <url><loc>https://www.czarconsultancy.com/article-contract</loc></url>
 </urlset>
