@@ -42,6 +42,10 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
 .nav-cta:hover { background: var(--red-dk) !important; }
 .hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer; background: none; border: none; z-index: 1001; }
 .hamburger span { width: 24px; height: 2px; background: var(--ink); transition: all 0.3s; border-radius: 2px; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 .mob-nav {
   position: fixed;
   top: 0;
@@ -224,6 +228,7 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
   top: 0;
   left: 0;
   width: 390px;
+  max-width: 85vw;
   height: 100vh;
   background: #fff;
   z-index: 10000;
@@ -624,7 +629,7 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
       </div>
       <div class="mega-col">
         <h4>Our Impact</h4>
-        <a href="/client-results.html">Client Results</a>
+        <a href="/client-results">Client Results</a>
         <a href="/about" style="color: var(--red); font-weight: 700; margin-top: 16px;">View Full Profile →</a>
       </div>
     </div>
@@ -651,11 +656,13 @@ button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; backgr
 
 <script>
 // Mobile Navigation Toggle
-function toggleMobileNav() {
-  const nav = document.getElementById('mobileNav');
-  const isOpen = nav.classList.toggle('open');
-  nav.setAttribute('aria-hidden', String(!isOpen));
-  document.body.style.overflow = isOpen ? 'hidden' : '';
+function toggleMobileNav(){
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn && mobBtn.classList.contains('open')) {
+    closeDesktopSidebar();
+  } else {
+    openDesktopSidebar();
+  }
 }
 
 // Scroll Progress Bar
@@ -691,7 +698,7 @@ window.addEventListener('scroll', () => {
     <a href="/team" class="ds-sub-link">Leadership & Team</a>
     <a href="/careers" class="ds-sub-link">Careers</a>
     <div class="ds-divider"></div>
-    <a href="/client-results.html" class="ds-sub-link" style="color:var(--red);">Client Results</a>
+    <a href="/client-results" class="ds-sub-link" style="color:var(--red);">Client Results</a>
   </div>
 
   <div id="ds-services" class="ds-menu-view">
@@ -758,12 +765,18 @@ function openDesktopSidebar() {
   }
   
   sidebar.classList.add('open');
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn) mobBtn.classList.add('open');
+  document.body.style.overflow = 'hidden';
   overlay.classList.add('open');
 }
 
 function closeDesktopSidebar() {
   document.getElementById('desktop-sidebar').classList.remove('open');
   document.getElementById('sidebar-overlay').classList.remove('open');
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn) mobBtn.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 function switchDsView(viewId) {

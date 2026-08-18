@@ -62,6 +62,10 @@ button{font-family:'Inter',sans-serif;cursor:pointer;border:none;background:none
 .nav-cta:hover{background:var(--red-dk)!important;transform:translateY(-2px);box-shadow:0 10px 20px rgba(204,0,0,0.2)}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;z-index:1001}
 .hamburger span{width:24px;height:2px;background:var(--ink);transition:all 0.3s;border-radius:2px}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 .mob-nav {
   position: fixed;
   top: 0;
@@ -260,6 +264,7 @@ button{font-family:'Inter',sans-serif;cursor:pointer;border:none;background:none
   top: 0;
   left: 0;
   width: 390px;
+  max-width: 85vw;
   height: 100vh;
   background: #fff;
   z-index: 10000;
@@ -401,7 +406,7 @@ button{font-family:'Inter',sans-serif;cursor:pointer;border:none;background:none
       </div>
       <div class="mega-col">
         <h4>Our Impact</h4>
-        <a href="/client-results.html">Client Results</a>
+        <a href="/client-results">Client Results</a>
         <a href="/about" style="color: var(--red); font-weight: 700; margin-top: 16px;">View Full Profile →</a>
       </div>
     </div>
@@ -575,13 +580,12 @@ button{font-family:'Inter',sans-serif;cursor:pointer;border:none;background:none
 <script>
 // Mobile Nav
 function toggleMobileNav(){
-  const nav = document.getElementById('mobileNav');
-  const btn = document.getElementById('mobileMenuButton');
-  if(!nav) return;
-  const o = nav.classList.toggle('open');
-  nav.setAttribute('aria-hidden', String(!o));
-  if(btn) btn.setAttribute('aria-expanded', String(o));
-  document.body.style.overflow = o ? 'hidden' : '';
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn && mobBtn.classList.contains('open')) {
+    closeDesktopSidebar();
+  } else {
+    openDesktopSidebar();
+  }
 }
 </script>
 
@@ -610,7 +614,7 @@ function toggleMobileNav(){
     <a href="/team" class="ds-sub-link">Leadership & Team</a>
     <a href="/careers" class="ds-sub-link">Careers</a>
     <div class="ds-divider"></div>
-    <a href="/client-results.html" class="ds-sub-link" style="color:var(--red);">Client Results</a>
+    <a href="/client-results" class="ds-sub-link" style="color:var(--red);">Client Results</a>
   </div>
 
   <div id="ds-services" class="ds-menu-view">
@@ -677,12 +681,18 @@ function openDesktopSidebar() {
   }
   
   sidebar.classList.add('open');
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn) mobBtn.classList.add('open');
+  document.body.style.overflow = 'hidden';
   overlay.classList.add('open');
 }
 
 function closeDesktopSidebar() {
   document.getElementById('desktop-sidebar').classList.remove('open');
   document.getElementById('sidebar-overlay').classList.remove('open');
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn) mobBtn.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 function switchDsView(viewId) {
