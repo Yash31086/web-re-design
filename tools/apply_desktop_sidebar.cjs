@@ -29,6 +29,7 @@ const sidebarCSS = `
   top: 0;
   left: 0;
   width: 390px;
+  max-width: 85vw;
   height: 100vh;
   background: #fff;
   z-index: 10000;
@@ -209,12 +210,18 @@ function openDesktopSidebar() {
   }
   
   sidebar.classList.add('open');
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn) mobBtn.classList.add('open');
+  document.body.style.overflow = 'hidden';
   overlay.classList.add('open');
 }
 
 function closeDesktopSidebar() {
   document.getElementById('desktop-sidebar').classList.remove('open');
   document.getElementById('sidebar-overlay').classList.remove('open');
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn) mobBtn.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 function switchDsView(viewId) {

@@ -3,11 +3,42 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Contact Czar Consultancy - Get expert labour law and compliance advisory. Call +91 9319095290 or email compliance@czarconsultancy.com."/>
-<meta property="og:title" content="Contact Us | Czar Consultancy"/>
-<meta property="og:url" content="https://czarconsultancy.com/contact"/>
-<link rel="canonical" href="https://czarconsultancy.com/contact"/>
-<title>Contact Us | Czar Consultancy - Labour Law Advisory</title>
+<title>Contact Czar Consultancy | Labour Law &amp; Compliance Consultation India</title>
+<meta name="description" content="Contact Czar Consultancy for expert labour law and compliance advisory in India. Call +91 9319095290 or email compliance@czarconsultancy.com. Request a free consultation for PF/ESIC, payroll, factory act, POSH compliance and more."/>
+<meta name="keywords" content="contact Czar Consultancy, compliance consultation India, labour law advisory contact, compliance expert India"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.czarconsultancy.com/contact"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Czar Consultancy"/>
+<meta property="og:title" content="Contact Czar Consultancy | Labour Law &amp; Compliance Consultation"/>
+<meta property="og:description" content="Contact Czar Consultancy for expert labour law and compliance advisory. Call +91 9319095290 or email compliance@czarconsultancy.com."/>
+<meta property="og:url" content="https://www.czarconsultancy.com/contact"/>
+<meta property="og:image" content="https://www.czarconsultancy.com/logo.png"/>
+<meta property="og:locale" content="en_IN"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Contact Czar Consultancy | Labour Law Advisory India"/>
+<meta name="twitter:description" content="Get expert labour law and compliance consultation. Call +91 9319095290."/>
+<meta name="twitter:image" content="https://www.czarconsultancy.com/logo.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "url": "https://www.czarconsultancy.com/contact",
+      "name": "Contact Czar Consultancy",
+      "description": "Contact Czar Consultancy for expert labour law and compliance advisory in India."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.czarconsultancy.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.czarconsultancy.com/contact"}
+      ]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous"/>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous"/>
 <script src="https://web3forms.com/client/script.js" async defer></script>
@@ -60,6 +91,10 @@ button { cursor: pointer; border: none; background: none; }
 .nav-cta:hover { background: var(--red-dk) !important; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(198,40,40,0.2); }
 .hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer; background: none; border: none; z-index: 1001; }
 .hamburger span { width: 24px; height: 2px; background: var(--ink); transition: all 0.3s; border-radius: 2px; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 .mob-nav {
   position: fixed;
   top: 0;
@@ -292,6 +327,7 @@ button { cursor: pointer; border: none; background: none; }
   top: 0;
   left: 0;
   width: 390px;
+  max-width: 85vw;
   height: 100vh;
   background: #fff;
   z-index: 10000;
@@ -444,7 +480,7 @@ button { cursor: pointer; border: none; background: none; }
       </div>
       <div class="mega-col">
         <h4>Our Impact</h4>
-        <a href="/client-results.html">Client Results</a>
+        <a href="/client-results">Client Results</a>
         <a href="/about" style="color: var(--red); font-weight: 700; margin-top: 16px;">View Full Profile →</a>
       </div>
     </div>
@@ -807,14 +843,13 @@ window.addEventListener('scroll', () => {
 });
 
 // Mobile Nav
-function toggleMobileNav() {
-  const nav = document.getElementById('mobileNav');
-  const button = document.getElementById('mobileMenuButton');
-  if (!nav) return;
-  const isOpen = nav.classList.toggle('open');
-  nav.setAttribute('aria-hidden', String(!isOpen));
-  if (button) button.setAttribute('aria-expanded', String(isOpen));
-  document.body.style.overflow = isOpen ? 'hidden' : '';
+function toggleMobileNav(){
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn && mobBtn.classList.contains('open')) {
+    closeDesktopSidebar();
+  } else {
+    openDesktopSidebar();
+  }
 }
 </script>
 
@@ -843,7 +878,7 @@ function toggleMobileNav() {
     <a href="/team" class="ds-sub-link">Leadership & Team</a>
     <a href="/careers" class="ds-sub-link">Careers</a>
     <div class="ds-divider"></div>
-    <a href="/client-results.html" class="ds-sub-link" style="color:var(--red);">Client Results</a>
+    <a href="/client-results" class="ds-sub-link" style="color:var(--red);">Client Results</a>
   </div>
 
   <div id="ds-services" class="ds-menu-view">
@@ -901,12 +936,18 @@ function openDesktopSidebar() {
   }
   
   sidebar.classList.add('open');
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn) mobBtn.classList.add('open');
+  document.body.style.overflow = 'hidden';
   overlay.classList.add('open');
 }
 
 function closeDesktopSidebar() {
   document.getElementById('desktop-sidebar').classList.remove('open');
   document.getElementById('sidebar-overlay').classList.remove('open');
+  const mobBtn = document.querySelector('.hamburger');
+  if(mobBtn) mobBtn.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 function switchDsView(viewId) {
